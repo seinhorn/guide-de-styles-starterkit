@@ -1,0 +1,138 @@
+@charset "ISO-8859-15";
+/* setting */
+@import "modules/functions";
+
+// =============================================================== //
+// Résolution d'écrans pour le respondsive //
+// =============================================================== //
+$screen-small:			767px;
+$screen-medium:			1279px;
+$screen-xlarge:			1441px;
+// =============================================================== //
+// Configuration de la grille typographique  //
+// =============================================================== //
+$global-width: 			1140px;
+$row-width: 			$global-width;
+$column-gutter: 		30px;
+$total-columns: 		12;
+// $mobile-total-columns: $mobileTotalColumns;
+// $block-grid-elements: $blockGridElements; // Highest number of block grid elements, Maximum of 24 supported
+$header-height: 		179px;
+
+// =============================================================== //
+// Configuration global de la couleurs         //
+// =============================================================== //
+$main-color: 				#2d8dbf; // Bleue
+$main-color-dark: 			#2a7ba8; // Bleue
+$main-color-dark-plus: 		#276d91; // Bleue
+
+$secondary-color: 			#f15a00; // orange
+$secondary-color-light: 	#ff9c1a; // orange
+$secondary-color-dark: 		#e33d01; // orange
+
+$third-color: 				#475766; // Antracite
+$third-color-light: 		#cdd2d6; // Antracite
+$third-color-light-ultra: 	#f1f5f8; // Antracite
+$third-color-dark:			#384550; // Antracite
+
+$alert-color: 		        #c60f13;
+$success-color: 	        #5da423;
+
+$black: 			        #000;
+$white: 			        #fff;
+// ====================================================== //
+// Variables de couleurs des types de messages = //
+// ====================================================== //
+// Message d'alerte
+$warning-bg-color:          #ffcccc; // rose
+$warning-text-color:        #660000; // rouge
+// Message de succes
+$success-bg-color:          #d4f1bc; // vert
+$success-text-color:        #5da423; // vert
+// Message informatif
+$inform-bg-color:           #ffff99; // jaune
+$inform-text-color:         #505f6d; // gris
+// =============================================================== //
+// Typography
+// =============================================================== //
+$global-font-family: 		"Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$custom-bold-font-family: 	"OpenSansCondensedBold", $global-font-family;
+$custom-light-font-family: 	"OpenSansCondensedLight", $global-font-family;
+
+$origin-font-size:      100%; // = 16px = 1em
+$origin-font-size-px:   16px;
+$global-font-size-px:   13px;
+$global-font-size:      #{calcEm($global-font-size-px,$origin-font-size-px)};
+$global-line-height:    1.5em;
+
+$txt-color: 		    #333333; // Gris
+// =============================================================== //
+// Text Direction Settings
+// =============================================================== //
+$text-direction: ltr !default; // Controls default global text direction, 'rtl' or 'ltr'
+$default-float: left !default; // Change this to 'right' for right-to-left languages
+$default-opposite: right !default; // Change this to 'left' for right-to-left languages
+
+@if $text-direction == ltr {
+  $default-float: left;
+  $default-opposite: right;
+} @else {
+  $default-float: right;
+  $default-opposite: left;
+}
+// =============================================================== //
+// Les titres
+// =============================================================== //
+$title-n1-font-size: 	#{calcEm(24px,$global-font-size-px)};
+$title-n2-font-family: 	$custom-bold-font-family;
+$title-n2-color: 		#7a7d80;
+$title-n2-bgcolor: 		#e8ebed;
+$title-n3-color: 		#454647;
+
+$highlight-color: 	#ffff99;
+$alert-color: 		#c60f13;
+$success-color: 	#5da423;
+// =============================================================== //
+// Les liens
+// =============================================================== //
+$link-text-color: $main-color;
+
+// =============================================================== //
+// Listviews
+// =============================================================== //
+$item-listview-border-color: #c4c8cc;
+
+// =============================================================== //
+// Les formulaires
+// =============================================================== //
+$form-text-color: 				$third-color-dark;
+$form-text-size: 				0.9em;
+$form-link-text-color: 			$white;
+$form-title-text-color: 		$form-link-text-color;
+$form-title-shadow-color: 		#1e526e;
+$form-title-border-color:       $item-listview-border-color;
+$form-header-border-color-dark: #246184;
+$form-header-border-color-light:#3692c7;
+$form-header-border-radius: 	4px;
+$form-input-border-color: 		#4777a3;
+$form-button-bg-color: 			$secondary-color;
+$form-button-hover-bg-color: 	$secondary-color-dark;
+$form-button-border-color: 		#3d759f;
+$form-button-border-radius: 	6px;
+$form-button-text-color: 		#fff;
+$form-button-text-shadow-color: #ed3c00;
+$form-icon-button-color: 		#aa4000;
+$form-icon-button-light-color: 	#f77b12;
+$form-icon-button-dark-color: 	#8c3400;
+
+// =============================================================== //
+// Menu de navigation
+// =============================================================== //
+$menu-text-color: 		#676767;
+$menu-hover-text-color: #484848;
+$menu-border-top-color: #53a087;
+$menu-font-family:		$custom-bold-font-family;
+$sous-menu-font-family:	$custom-light-font-family;
+$menu-sousnav-height: 	51px;
+
+$experimental-support-for-svg: 			true;

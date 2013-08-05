@@ -1,0 +1,36 @@
+@charset "ISO-8859-15";
+/* modules/fonts */
+@import "compass/css3";
+// Fonts settings
+@mixin load-fonts($name, $path){
+	@include font-face(
+			#{$name},
+			font-files('#{$path}.woff', woff, '#{$path}.ttf', truetype, '#{$path}.svg##{$name}', svg),
+		$eot: "#{$path}.eot",
+		$weight: normal,
+		$style: normal
+	);
+}
+
+@mixin init-global-fonts(){
+	@include load-fonts("OpenSansCondensedLight", 'fonts/open-sans-condensed/OpenSans-CondLight-webfont');
+	@include load-fonts("OpenSansCondensedLightItalic", 'fonts/open-sans-condensed/OpenSans-CondLightItalic-webfont');
+	@include load-fonts("OpenSansCondensedBold", 'fonts/open-sans-condensed/OpenSans-CondBold-webfont');
+	// Correspondance glyphes => unicode => icons
+	// | Glyphe | Unicode | Description     |
+	// | a      | U0061   | Jeunes diplomes |
+	// | b      | U0062   | Commentaires    |
+	// | c      | U0063   | Check           |
+	// | d      | U0064   | Dirigeants      |
+	// | e      | U0065   | Internationnale |
+	// | f      | U0066   | Regions         |
+	// | g      | U0067   | Loupe1          |
+	// | m      | U006d   | menu            |
+	// | n      | U006e   | News            |
+	// | o      | U006f   | loupe 2         |
+	// | p      | U0070   | triangle droite |
+	// | t      | U0074   | TV              |
+	// | u      | U0075   | Utilisateur     |
+	// |        | U00A1   | fermeture menu  |
+	@include load-fonts("fcmssymbols", 'fonts/fcmssymbols/fcmssymbols');
+}
