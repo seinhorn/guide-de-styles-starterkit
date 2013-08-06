@@ -1,0 +1,133 @@
+@charset "ISO-8859-15";
+// =============================================================== //
+// = Module Boutons = //
+// =============================================================== //
+@import "compass/css3";
+@import "../icons";
+// =============================================================== //
+// = Construction de la sprite par compass à partir des images   = //
+// = du répertoire /assets/img/boutons/ qui ont l'extension = //
+// = png. Les class son nommées .boutons-<non de l'image>        = //
+// =============================================================== //
+//@import "boutons/*.png";
+//@include all-boutons-sprites;
+// =============================================================== //
+// = Boutons associes au code html                              = //
+// =============================================================== //
+@mixin reset-button() {
+	display: inline-block;
+  	margin: 0;
+	padding: 0;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+}
+@mixin bouton-img($img) {
+	display: inline-block;
+	width: image-width($img);
+	height: image-height($img);
+}
+@mixin action-buttons(){
+    .button {
+		@include reset-button;
+		padding: 0 1em;
+	}
+	.rounded {
+		@include border-radius($form-button-border-radius);
+	}
+	.primary {
+		color: $white;
+		background-color: $form-button-bg-color;
+		font-family: $custom-bold-font-family;
+		text-decoration: none;
+		text-transform: uppercase;
+		span {
+			display: block;
+			padding: 5px 0;
+		  	text-align: center;
+		}
+	}
+	.primary:hover {
+		background-color: $form-button-hover-bg-color;
+		text-decoration: none;
+	}
+	.big { font-size: 2em; }
+	.medium { font-size: 1.4em; }
+	.small { font-size: 1em; }
+
+	.search {
+		position: relative;
+		span {
+		  	padding-left: 1em;
+			@include icons($texte:attr(data-icon), $position: absolute, $left:0.47em, $top:6px, $color:darken($form-button-bg-color,20), $font-size:1.2em);
+			&::before {
+				text-shadow: 0px 1px 1px lighten($form-button-bg-color, 30);
+			}
+		}
+		.widget & { margin-bottom: 1em; }
+	}
+	.withborder {
+		margin: 6px;
+		@include box-shadow(inset 0px 1px 1px lighten($form-button-bg-color, 20));
+		overflow: visible;
+
+		&::before {
+			@include box-sizing(content-box);
+			content: "";
+			display: block;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			padding: 6px;
+			left: -6px;
+			top: -6px;
+			z-index: -1;
+			background-color: $form-button-border-color;
+			@extend .rounded;
+		}
+	}
+	.link {
+		@include reset-button;
+		position: relative;
+		font-family: $custom-bold-font-family;
+		text-decoration: none;
+		span {
+			@include icons($texte:attr(data-icon), $position: absolute, $left:0.47em, $top:7px, $color:$main-color-dark-plus, $font-size:0.9em);
+			text-shadow: 0px 1px 1px darken($form-title-shadow-color, 30);
+			&::before {
+			  text-shadow: none;
+			}
+		}
+		&:hover {
+		  	text-decoration: none;
+		}
+	}
+	.secondary {
+		padding: 0 1em;
+		span {
+			display: block;
+			padding: 5px 5px 5px 0.6em;
+		}
+		&.search {
+		  	color: $white;
+		}
+	}
+
+	@include respondTo(smallscreen){
+		.primary { width: 99%; }
+		.withborder { width: 96%; }
+	}
+
+	// boutons rechercher sur la home
+	@include respondTo(moresmallscreen){
+		#motRechH {
+			.outerbutton {
+				float: right;
+			}
+			.link {
+				float: left;
+				margin-top: 0.35em;
+			}
+		}
+	}
+}

@@ -1,0 +1,65 @@
+@charset "iso-8859-15";
+
+// Message d'alerte
+$warning-bg-color: #ffcccc !default;
+$warning-text-color: #660000 !default;
+
+// Message de succes
+$success-bg-color: #d4f1bc !default;
+$success-text-color: #5da423 !default;
+
+// Message informatif
+$inform-bg-color: #ffff99 !default;
+$inform-text-color: #505f6d !default;
+
+// ====================================================== //
+// = Messages qui s'affichent dans les formulaires = //
+// ====================================================== //
+
+@mixin icon-close() {
+	.close {
+		position: absolute;
+		top: 0.65em;
+		right: 0;
+		display: block;
+		width: 2em;
+		height: 2em;
+		line-height: 2;
+		font-weight: bold;
+		text-align: center;
+		cursor: pointer;
+	}
+}
+
+@mixin corps-alert-boxes {
+	position: relative;
+	margin-top: 1em;
+	padding: 1.1em 2.2em 1.1em 3.5em;
+	@include icon-close();
+}
+
+@mixin color-alert-boxes($bg-color,$text-color) {
+	background-color: $bg-color;
+	color: $text-color;
+}
+
+@mixin alert-boxes() {
+	.alert-box {
+		@include corps-alert-boxes;
+	}
+	// Message d'alerte
+	.warning {
+		@include color-alert-boxes($warning-bg-color, $warning-text-color);
+		@include icons-alert-boxes(warning);
+	}
+	// Message de succes
+	.success {
+		@include color-alert-boxes($success-bg-color, $success-text-color);
+		@include icons-alert-boxes(success);
+	}
+	// Message d'information
+	.information {
+		@include color-alert-boxes($inform-bg-color, $inform-text-color);
+		@include icons-alert-boxes(information);
+	}
+}

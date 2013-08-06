@@ -13,9 +13,9 @@
 }
 
 @mixin init-global-fonts(){
-	@include load-fonts("OpenSansCondensedLight", 'fonts/open-sans-condensed/OpenSans-CondLight-webfont');
-	@include load-fonts("OpenSansCondensedLightItalic", 'fonts/open-sans-condensed/OpenSans-CondLightItalic-webfont');
-	@include load-fonts("OpenSansCondensedBold", 'fonts/open-sans-condensed/OpenSans-CondBold-webfont');
+	@include load-fonts("OpenSansCondensedLight", 'open-sans-condensed/OpenSans-CondLight-webfont');
+	@include load-fonts("OpenSansCondensedLightItalic", 'open-sans-condensed/OpenSans-CondLightItalic-webfont');
+	@include load-fonts("OpenSansCondensedBold", 'open-sans-condensed/OpenSans-CondBold-webfont');
 	// Correspondance glyphes => unicode => icons
 	// | Glyphe | Unicode | Description     |
 	// | a      | U0061   | Jeunes diplomes |
@@ -32,5 +32,5 @@
 	// | t      | U0074   | TV              |
 	// | u      | U0075   | Utilisateur     |
 	// |        | U00A1   | fermeture menu  |
-	@include load-fonts("fcmssymbols", 'fonts/fcmssymbols/fcmssymbols');
+	@include load-fonts("fcmssymbols", 'fcmssymbols/fcmssymbols');
 }

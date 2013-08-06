@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<title>Cadremploi : 15000 offres d'emploi cadres et 1000 cabinets de recrutement</title>
+	<meta name="description" content="Recherche d'emploi cadres et dirigeants sur Internet. Actualit&eacute;s, conseils, CV, lettres de motivation, entretiens. Des milliers d'offres d'emploi, toutes fonctions, tous secteurs, tous profils."/>
+	<meta property="fb:admins" content="508847333,100001046746700" />
+	<link rel="apple-touch-icon" type="image/png" href="http://www.cadremploi.fr/iphone.png"/>
+	<meta http-equiv="imagetoolbar" content="no"/>
+	<style type="text/css">
+		body {
+			margin:0;
+			padding: 0;
+		}
+		section {
+			min-height: 100px;
+		}
+		.container { border: 3px solid black; }
+		.aside-wrap { background-color: #79c91b; }
+		.main-wrap { background-color: #348800; }
+		#sur-footer {
+			background-color: #c1ea90;
+			outline: 1px solid #348800;
+		}
+		#footer {
+			background-color: #c1ea90;
+			outline: 1px solid #348800;
+		}
+		.small-screen .aside-wrap, .main-wrap, #navBar { @include single-transition(all, .25s, ease-in); }
+		.aside-wrap, .main-wrap { display: block; }
+		.main-wrap {
+			position: relative;
+			float:right;
+			width: 100%;
+			z-index: 1;
+		}
+		.aside-wrap {
+			position: relative;
+			float:left;
+			width: 80%;
+			z-index: 2;
+			padding-bottom: 25em;
+			margin-left: -100%;
+		}
+		.container {
+			position: relative;
+			overflow: hidden;
+			*zoom:1;
+		}
+		&:before, &:after { content: " "; display: table; }
+		&:after { clear: both; }
+		.section {
+			position: relative;
+			width:100%;
+			max-width: 100%;
+			min-width: 0;
+			margin:0 auto;
+		}
+@media only screen and (max-width: 767px) {}
+@media only screen and (max-width: 1279px) and (min-width: 768px) {}
+@media only screen and (max-width: 1441px) and (min-width: 1279px) {}
+@media only screen and (min-width: 768px) {
+	.container {}
+	.full-column {}
+	.center-column {}
+	.section {
+		position: relative;
+		width: auto;
+		max-width: 1140px;
+		min-width: 768px;
+		margin:0 auto;
+
+	}
+	.container .aside-wrap, .container .main-wrap { float: none; }
+	.main-wrap { position: static; }
+	.aside-wrap {
+		position: relative;
+		width: 100%;
+		z-index: 2;
+		padding: 0;
+		margin: 0;
+	}
+	.sidebar-button, .login-button { display: none; }
+}
+@media only screen and (min-width: 1279px) {}
+@media only screen and (min-width: 1441px) {}
+
+	</style>
+</head>
+<body>
+<div class="container">
+
+	<div class="aside-wrap">
+		<section class="section">
+			<nav role="navigation" id="navBar">Nav</nav>
+			<aside class="bloc-login">Login</aside>
+		</section>
+	</div><!-- //.aside-wrap -->
+
+	<div class="main-wrap">
+
+		<div id="header" class="full-column">
+			<header>
+			<div class="center-column">
+					<nav class="nav-mobile row off-canvas-nav-links" role="navigation">
+						<div data-icon="m" title="menu" class="two-mobile columns sidebar-button">menu</div>
+						<div class="logo-ce eight-mobile columns">
+							<a href="http://www.cadremploi.fr" title="Cadremploi.fr - retour &agrave; l'accueil">
+							    <img src="http://assets.cadremploi.fr/images/2012/vignettes/logo-CE.png" width="203" height="111" alt="Cadremploi.fr - retour &agrave; l'accueil"/>
+							</a>
+						</div>
+						<div data-icon="u" title="connexion" class="two-mobile columns login-button">connexion</div>
+					</nav>
+			</div>
+			<div class="sousnav"></div>
+			</header>
+
+			<aside id="tagPubBanniere">Pub</aside>
+		</div>
+
+		<div id="main" class="full-column">
+			<section class="section" role="main">
+
+			</section>
+		</div><!-- //main -->
+
+		<div id="cadremploitv" class="full-column">
+			<section class="section"></section>
+		</div><!-- //cadremploitv -->
+
+		<div id="blocs-promo" class="full-column">
+			<section class="section"></section>
+		</div>
+
+	</div><!-- //.main-wrap -->
+
+	<div class="footer-wrap">
+		<div id="sur-footer" class="full-column">
+			<section>sur-footer</section>
+		</div>
+		<div id="footer" class="full-column">
+			<section>footer</section>
+		</div>
+	</div>
+
+</div>
+<script type="text/javascript" src="http://www.cadremploi.fr/assets/js/vendor/jquery/1.8.2/jquery.js"></script>
+<script type="text/javascript">
+	// add/remove body classes based on viewport width
+	var bodyViewportClasses = function() {
+		// testing the display property on the element
+		var nav_display = $('.off-canvas-nav-links').css('display');
+		// testing for display:block (changed in css via media queries)
+		if (nav_display === 'block') {
+			$("body").removeClass("multi-column")
+					.addClass("small-screen");
+		} 
+		// testing for display:none (changed in css via media queries)
+		if (nav_display === 'none') {
+			$("body").removeClass("active-sidebar active-nav small-screen")
+				.addClass("multi-column");
+		}
+	}
+
+	// function for site menu display toggle
+	var showMenu = function() {
+		var menu = $('#navBar');
+		$('body').removeClass("active-sidebar")
+				.toggleClass("active-nav");
+		$('.sidebar-button').removeClass("active-button");
+		$('.menu-button').toggleClass("active-button");
+	}
+
+	// function for sidebar display toggle
+	var showSidebar = function() {
+		$('body').removeClass("active-nav")
+				.toggleClass("active-sidebar");
+		$('.menu-button').removeClass("active-button");
+		$('.sidebar-button').toggleClass("active-button");
+	}
+
+	// add/remove classes everytime the window resize event fires
+	jQuery(window).resize(function(){
+		bodyViewportClasses();	
+	});	
+
+	jQuery(document).ready(function($) {
+		// Toggle for sidebar
+		$('.sidebar-button').click(function(e) {
+			console.log("sidebar-button");
+			e.preventDefault();
+			showSidebar();
+		});	
+		$('.menu-button').click(function(e) {
+			e.preventDefault();
+			showMenu();
+	});
+	bodyViewportClasses();
+});
+</script>
+</body>
+</html>

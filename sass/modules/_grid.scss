@@ -1,0 +1,146 @@
+@charset "ISO-8859-15";
+
+// =============================================================== //
+// = Module de generation de grille fluide    = //
+// =============================================================== //
+
+@import "functions";
+// =============================================================== //
+// = Variable definis par defaut et surcharge dans le fichier de = //
+// = setting global = //
+// =============================================================== //
+$row-width: 1140px !default;
+$column-gutter: 30px !default;
+$default-float : left !default;
+$total-columns: 12 !default;
+
+// The Grid ----------------------
+@mixin row-grid($row-grid-width, $row-grid-max-width, $row-grid-min-width){
+	width: auto;
+	max-width: none;
+	min-width: 0;
+	// Nicolas Gallagher's micro clearfix
+	@include clearfix();
+}
+// =============================================================== //
+// = Generation des classes de grilles = //
+// =============================================================== //
+@mixin num-to-word-classes($width:false, $device:false){
+	// Creating column classes
+	@for $i from 1 through $total-columns {
+		@if $device == mobile {
+			.#{convert-number-to-word($i)}-mobile { width: gridCalc($i, $total-columns); }
+		}
+		@else {
+			@if $width == auto {
+				.#{convert-number-to-word($i)} {  width: auto; }
+			}
+			@else {
+				.#{convert-number-to-word($i)} { width: gridCalc($i, $total-columns); }
+			}
+		}
+	}
+}
+@mixin init-grid(){
+	.row {
+		@include row-grid(auto, none, 0);
+		.column, .columns {
+			margin-bottom: 1em;
+			&.delimit {
+				border-left: 0 none;
+				padding-left: 0;
+			}
+			.respond-mobile {
+				max-width: 100%;
+				width: 100%;
+				float: none;
+				text-align: center;
+			}
+		}
+		[class*="-mobile"]{ float: left; }
+		[class*="-mobile"]:last-child.end,
+		[class*="-mobile"].end { float: right !important; }
+	}
+
+
+	// Creating column classes
+	@include num-to-word-classes(auto);
+
+	@include num-to-word-classes(none, mobile);
+
+	@include respondTo(mediumscreen) {
+		.row {
+			@include row-grid(auto, 100%, none);
+			margin: 0 auto;
+			.row {
+				@include row-grid(auto, none, 0);
+			}
+		}
+	}
+	@include respondTo(moresmallscreen) {
+		.row {
+			@include row-grid($row-width, 100%, 758px);
+			margin: 0 auto;
+			.row { @include row-grid(auto, none, 0); }
+			&.collapse {
+				.column, .columns { padding: 0; }
+			}
+			.row .collapse { margin: 0; }
+			.column, .columns {
+				float: $default-float;
+				min-height: 1px;
+				padding-right: calc-percent($column-gutter, $row-width)/2;
+				position: relative;
+				&:last-child {
+					padding-right:0;
+				}
+				&.delimit {
+					border-left: 1px solid #aaa;
+					padding-left: 1.4em;
+				}
+			}
+		}
+
+		[class*="column"] + [class*="column"]:last-child {
+			float: $default-opposite;
+		}
+		[class*="column"] + [class*="column"].end {
+			float: $default-float;
+		}
+
+		// Creating column classes
+		@include num-to-word-classes();
+
+		// Creating .row .offset-by-# classes
+		@for $i from 1 through $total-columns - 2 {
+			.row {
+				.offset-by-#{convert-number-to-word($i)} {
+					margin-#{$default-float}: gridCalc($i, $total-columns);
+				}
+			}
+		}
+
+		// Creating .row .push-# classes
+		@for $i from 2 through $total-columns - 2 {
+			.push-#{convert-number-to-word($i)} {
+				#{$default-float}: gridCalc($i, $total-columns);
+			}
+			.pull-#{convert-number-to-word($i)} {
+				#{$default-opposite}: gridCalc($i, $total-columns);
+			}
+		}
+	}
+}
+// =============================================================== //
+// = Generation des classes de qui permettent generer un espace  = //
+// = a la gauche de l'objet auquel on applique la class          = //
+// =============================================================== //
+@mixin offset-by($dir){
+	// Creating .row .push-# classes
+	@for $i from 2 through $total-columns - 2 {
+		.offset-by-#{convert-number-to-word($i)}-to-#{$dir} {
+			margin-#{$dir}: gridCalc($i, $total-columns);
+		}
+	}
+}
+

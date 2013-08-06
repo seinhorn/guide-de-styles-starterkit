@@ -1,0 +1,63 @@
+@charset "ISO-8859-15";
+
+$screen-small:	768px !default;
+$screen-medium:	1279px !default;
+$screen-xlarge:	1441px !default;
+
+@mixin respondTo($media, $orientation:false) {
+	@if ($orientation == false) {
+	// - 767
+		@if ($media == smallscreen) {
+			@media only screen and (max-width: $screen-small) { @content; }
+		} //  entre 767 et 1279
+		@else if ($media == mediumscreen) {
+			@media only screen and (max-width: $screen-medium)
+			and (min-width: $screen-small + 1) { @content; }
+		} // entre 1279 et 1441
+		@else if ($media == largescreen) {
+			@media only screen and (max-width: $screen-xlarge)
+			and (min-width: $screen-medium + 1) { @content; }
+		} // au dessus de 768
+		@else if ($media == moresmallscreen) {
+			@media only screen and (min-width: $screen-small + 1) { @content; }
+		} // au dessus de 1279
+		@else if ($media == moremediumscreen) {
+			@media only screen and (min-width: $screen-medium + 1) { @content; }
+		} // au dessus de 1441
+		@else if ($media == morelargescreen) {
+			@media only screen and (min-width: $screen-xlarge) { @content; }
+		}
+		@else if ($media == allLandscape) {
+			@media only screen and (orientation:landscape) { @content; }
+		}
+	}
+	@else {
+	// - 767
+		@if ($media == smallscreen) {
+			@media only screen and (max-width: $screen-small)
+			and (orientation:landscape) { @content; }
+		} //  entre 767 et 1279
+		@else if ($media == mediumscreen) {
+			@media only screen and (max-width: $screen-medium)
+			and (min-width: $screen-small + 1)
+			and (orientation:landscape){ @content; }
+		} // entre 1279 et 1441
+		@else if ($media == largescreen) {
+			@media only screen and (max-width: $screen-xlarge)
+			and (min-width: $screen-medium + 1)
+			and (orientation:landscape) { @content; }
+		} // au dessus de 768
+		@else if ($media == moresmallscreen) {
+			@media only screen and (min-width: $screen-small + 1)
+			and (orientation:landscape) { @content; }
+		} // au dessus de 1279
+		@else if ($media == moremediumscreen) {
+			@media only screen and (min-width: $screen-medium + 1)
+			and (orientation:landscape) { @content; }
+		} // au dessus de 1441
+		@else if ($media == morelargescreen) {
+			@media only screen and (min-width: $screen-xlarge)
+			and (orientation:landscape) { @content; }
+		}
+	}
+}

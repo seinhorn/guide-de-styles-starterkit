@@ -1,0 +1,10 @@
+@charset "ISO-8859-15";
+
+@import "../../settings";
+@import "../../modules/reset";
+@import "../../modules/images/bg";
+@import "../../modules/utils";
+@import "../../modules/panel";
+
+@include reset();
+@include init-panel();

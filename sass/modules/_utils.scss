@@ -1,0 +1,47 @@
+@charset "ISO-8859-15";
+/* modules/utils */
+// = Styles utilitaire que l'on utilise partout  ================= //
+.invisible { display: none !important; }
+.visible { display: block; }
+.hide-text {
+	text-indent:100%;
+	overflow:hidden;
+	white-space: nowrap;
+}
+.width-auto { width: auto }
+.float-left { float: left; }
+.float-right { float: right; }
+
+.respond { max-width: 100%; }
+.ie7 .respond { width: 95%; }
+// masquer les element d'accessibilite
+#accessNav { display: none; }
+// = Taille de Typo ============================================== //
+.smaller { font-size: .8em; line-height: 1.4; }
+.small, small { font-size: .925em; line-height: 1.3; }
+.large { font-size: 1.25em; line-height: 1.3; margin-bottom: 1em; }
+.larger { font-size: 1.5em; line-height: 1.5; }
+
+.caps { text-transform: uppercase; }
+.small-caps { font-variant: small-caps; }
+// = Alignement de Texte ========================================= //
+.aleft { text-align: left; }
+.acenter { text-align: center; }
+.aright { text-align: right; }
+
+// = Background ================================================== //
+.primary-bg { @include noiseBackground($main-color); }
+.primary-dark-bg { @include noiseBackground($main-color-dark); }
+.primary-dark-plus-bg { @include noiseBackground($main-color-dark-plus); }
+.third-bg { @include noiseBackground($third-color); }
+.third-bg-light-ultra { @include noiseBackground($third-color-light-ultra); }
+
+// = Padding ================================================== //
+// source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css //
+.p0 { padding: 0; }
+.pb0 { padding-bottom: 0; }
+
+// = Margin ================================================== //
+// source https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css //
+.m0 { margin: 0; }
+.mb0 { margin-bottom: 0; }

@@ -1,0 +1,15 @@
+@charset "iso-8859-15";
+/* modules/images/bg */
+@import "compass/css3";
+@import "../../settings";
+
+// Construction de la sprite par compass a partir des images
+// du repertoire http://assets.cadremploi.fr/assets/img/bg/ qui ont l'extension
+// png
+//@import "bg/*.png";
+//@include all-bg-sprites;
+
+
+@mixin noiseBackground($color){
+	background: $color inline-image('bg/bg-texture.png') repeat top left;
+}

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="fr"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="fr"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="fr"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="fr"><!--<![endif]-->
+	<head>
+		<meta charset="iso-8859-15"/>
+		<meta name="viewport" content="width=device-width" />
+		<title>Pattern typography</title>
+		<link rel="stylesheet" href="/css/tests/css/typography.css">
+	</head>
+	<body>
+		<div class="page-typography container">
+			<h3>Titraille</h3>
+			<div class="content" data-section-content>
+				<h1>Titre de niveau 1 &mdash; h1</h1>
+				<p>Aujourd'hui les titres de niveaux 1 n'ont pas r&eacute;&eacute;lement de charte</p>
+			</div>
+			<div class="content" data-section-content>
+				<h1 class="h2"><span>Titre de niveau 1 &mdash; h1</span></h1>
+				<p></p>
+			</div>
+			<div class="content" data-section-content>
+				<h2><span>Titre de niveau 2 &mdash; h2</span></h2><br>
+				<p>Sur la home de cadremploi les h2 sont utilis&eacute; comme titre de section pour s&eacute;parer les diff&eacute;rents
+					types de contenu ou modules. pour obtenir le font blanc sous la police il faut entourer le texte
+					d'une balise span.</p>
+			</div>
+			<div class="content" data-section-content>
+				<h2><a href="#">Titre de niveau 2 avec un lien &mdash; h2</a></h2>
+				<p>Le span peut &ecirc;tre remplac&eacute; par un lien.</p>
+			</div>
+			<div class="content" data-section-content>
+				<h3>Titre de niveau 3 &mdash; h3</h3>
+			</div>
+			<div class="content" data-section-content>
+				<div class="h3" role="heading" aria-level="3">Titre de niveau 3 &mdash; div.h3</div>
+			</div>
+			<div class="content" data-section-content>
+				<h4>Titre de niveau 4 &mdash; h4</h4>
+			</div>
+			<h3>Types de Listes</h3>
+			<div class="content" data-section-content>
+				<h4>Liste ordonn&eacute;</h4>
+				<ol>
+					<li>Item de Liste</li>
+					<li>Item de Liste</li>
+					<li>Item de Liste
+						<ol>
+							<li>Item de Liste de niveau 2</li>
+							<li>Item de Liste level 2
+								<ol>
+									<li>Item de Liste de niveau 3</li>
+									<li>Item de Liste de niveau 3</li>
+								</ol>
+							</li>
+						</ol>
+					</li>
+				</ol>
+			</div>
+			<div class="content" data-section-content>
+				<h4>Liste non-ordonn&eacute;</h4>
+				<ul>
+					<li>Item de Liste 01</li>
+					<li>Item de Liste 02</li>
+					<li>Item de Liste 03
+						<ul>
+							<li>Item de Liste de niveau 2</li>
+							<li>Item de Liste de niveau 2
+								<ul>
+									<li>Item de Liste de niveau 3</li>
+									<li>Item de Liste de niveau 3</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="content" data-section-content>
+				<h4>Liste de D&eacute;finition</h4>
+				<dl>
+					<dt>Titre de liste de d&eacute;finition</dt>
+					<dd>Donn&eacute;e de liste de d&eacute;finition</dd>
+					<dt>Titre de liste de d&eacute;finition</dt>
+					<dd>Donn&eacute;e de liste de d&eacute;finition</dd>
+					<dt>Titre de liste de d&eacute;finition</dt>
+					<dd>Donn&eacute;e de liste de d&eacute;finition</dd>
+				</dl>
+			</div>
+			<div class="content" data-section-content>
+				<h4>Citation &ndash; Blockquote</h4>
+				<blockquote cite="http://www.projeturbain.com">
+					<p>Duis autem vel eum iriure dolor in hendrerit in <q>vulputate velit esse molestie consequat</q>, vel illum dolore eu feugiat nulla facilisis.</p>
+				</blockquote>
+			</div>
+			<div class="content" data-section-content>
+				<h4>Tableau</h4>
+				<table>
+					<caption>Titre de tableau (caption)</caption>
+					<thead>
+					<tr>
+						<th>Ent&ecirc;te 1</th>
+						<th>Ent&ecirc;te 2</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td>Data 1</td>
+						<td>Data 2</td>
+					</tr>
+					<tr>
+						<td>Data 3</td>
+						<td>Data 4</td>
+					</tr>
+					</tbody>
+					<tfoot>
+					<tr>
+						<td>Footer 5</td>
+						<td>Footer 6</td>
+					</tr>
+					</tfoot>
+				</table>
+			</div>
+			<div class="content" data-section-content>
+				<h4>Autres balises</h4>
+				<p>
+					<a href="">Un lien</a><br />
+					<abbr title="title">abbreviation</abbr><br />
+					<b>Texte styl&eacute; en gras</b><br />
+					<cite>citation du titre d'une oeuvre</cite><br />
+					<code>Fragment de code</code><br />
+					<del>Text supprim&eacute;</del><br />
+					<dfn title="title">defining instance</dfn><br />
+					<em>emphatic stress</em><br />
+					<i>Texte styl&eacute; en italique</i><br />
+					<ins>inserted text</ins><br />
+					<kbd>user input</kbd><br />
+					<mark>marked (highlighted) text</mark><br />
+					<samp>sample output</samp><br />
+					<small>small print</small><br />
+					<strong>Texte d'importance remforc&eacute;</strong><br />
+					<sup>superscript</sup> <sub>subscript</sub><br />
+					<var>variable dans du texte</var>
+				</p>
+				<address>contact information (address)</address>
+				<pre>preformatted text</pre>
+				<p>soft hyphen : <code>&amp;shy; or &amp;#173;</code></p>
+	    	</div>
+			<div class="content" data-section-content>
+				<h4>Les espaces</h4>
+				<ul class="white-space">
+					<li>
+						<span>Demi-cadratin : <code>&amp;#8194;</code></span>
+						<span class="space-width">&#8194;</span>
+					</li>
+					<li>
+						<span>Cadratin : <code>&amp;#8195;</code></span>
+						<span class="space-width">&#8195;</span></li>
+					<li>
+						<span>1/3 d'espace : <code>&amp;#8196;</code></span>
+						<span class="space-width">&#8196;</span>
+					</li>
+					<li>
+						<span>1/4 d'espace : <code>&amp;#8197;</code></span>
+						<span class="space-width">&#8197;</span>
+					</li>
+					<li>
+						<span>1/6 d'espace : <code>&amp;#8198;</code></span>
+						<span class="space-width">&#8198;</span>
+					</li>
+					<li>
+						<span>figure space : <code>&amp;#8199;</code></span>
+						<span class="space-width">&#8199;</span>
+					</li>
+					<li>
+						<span>Espace de ponctuation : <code>&amp;#8200;</code></span>
+						<span class="space-width">&#8200;</span>
+					</li>
+					<li>
+						<span>Espace fin : <code>&amp;#8201;</code></span>
+						<span class="space-width">&#8201;</span>
+					</li>
+					<li>
+						<span>Espace large : <code>&amp;#8202;</code></span>
+						<span class="space-width">&#8202;</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

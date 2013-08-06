@@ -1,0 +1,180 @@
+@charset "ISO-8859-15";
+// ==   Typography: Titres, paragraphe...
+// ========================================================================== //
+@import "functions";
+// Code couleur
+
+$main-color: 		#2d8dbf !default; // Bleue
+$secondary-color: 	#f15a00 !default; // orange
+$txt-color: 		#333333 !default; // Gris
+$highlight-color: 	#ffff99 !default;
+
+$title-n2-color: 	#7a7d80 !default;
+$title-n2-bgcolor: 	#e8ebed !default;
+$title-n3-color: 	#454647 !default;
+
+$alert-color: 		#c60f13 !default;
+$success-color: 	#5da423 !default;
+$black: 			#000 !default;
+$white: 			#fff !default;
+
+// Text settings
+
+$global-font-family: 		"Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !default;
+$custom-bold-font-family: 	"OpenSansCondensedBold", $global-font-family !default;
+$custom-light-font-family: 	"OpenSansCondensedLight", $global-font-family !default;
+$menu-font-family:			$custom-bold-font-family !default;
+$sous-menu-font-family:		$custom-light-font-family !default;
+$title-n2-font-family:		$custom-bold-font-family !default;
+
+$global-font-size: 			0.9em !default;
+$global-line-height: 		1.5em !default;
+
+@mixin body-typo(){
+	body {
+		color: $txt-color;
+		text-shadow:rgba(0,0,0,0.01) 0 0 0;
+		-webkit-text-size-adjust: none; // Forbid mobile webkit to adjust text size
+	}
+}
+// ==   Liens
+// ========================================================================== //
+@mixin global-link(){
+	a {
+		color: $link-text-color;
+		text-decoration: none;
+		&:hover, &:focus {
+			text-decoration: underline;
+		}
+	}
+}
+
+// ==   Titres
+// ========================================================================== //
+@mixin global-h1(){
+	h1 a, .h1 a,
+	h1 a:hover, .h1 a:hover,
+	h1, .h1 {
+		font: normal $title-n1-font-size/.9 $custom-light-font-family;
+		text-decoration: none;
+		&.h2 {
+			font-size: 100%;
+			line-height: 1.231;
+		}
+	}
+	.home h1 {
+		padding: 0.4em 0.8em;
+		color: #fff;
+		span {
+			font-family: $custom-bold-font-family;
+		}
+	}
+}
+
+@mixin global-h2(){
+	h2, .h2 {
+		text-transform: uppercase;
+		font:{
+			family: $title-n2-font-family;
+			weight: normal;
+		}
+		color:$title-n2-color;
+		background-color: $title-n2-bgcolor;
+		span, a {
+			display:inline-block;
+			padding:0  1.1em 0 0;
+			text-decoration: none;
+			background: $white;
+			color: inherit;
+			.cadremploitv & { background-color: transparent; }
+		}
+	}
+}
+
+@mixin global-h3(){
+	h3, .h3 {
+		font:{
+			family: $title-n2-font-family;
+			size: 1.8em;
+			weight: normal;
+		}
+		color: $title-n3-color;
+		a {
+			color: $title-n3-color;
+			text-decoration: none;
+			&:hover {}
+		}
+	}
+}
+// ==   Embedded elements
+// ========================================================================== //
+//#map_canvas img, .map_canvas img { max-width: none!important; }
+// ==   Declaration global
+// ========================================================================== //
+@mixin init-typo(){
+	@include body-typo();
+	@include global-link();
+	@include global-h1();
+	@include global-h2();
+	@include global-h3();
+	// Cool sup & sub that don't mess with line height
+	sup, sub {
+		bottom: 0.425em;
+		font-weight: normal !important;
+		padding-left: 1px;
+		position: relative;
+		vertical-align: baseline;
+	}
+	sub { bottom: -0.33em; }
+	// ==   Paragraphes, Liste de definition, Listes (non)ordonées
+	// ========================================================================== //
+	p, ul, ol, blockquote, pre { margin-bottom: 1em; }
+	ol, ul { padding-left: 1.8em; }
+	ul ul { list-style-type: circle; }
+	p {
+		padding-top: 1em;
+		padding-bottom: 1em;
+	}
+	// ==   images et Autre
+	// ========================================================================== //
+	img, object, embed { max-width: 100%; }
+	//object, embed { height: 100%; }
+	img { -ms-interpolation-mode: bicubic; }
+}
+// ==   Pour afficher les typos dans le guide de styles
+// ========================================================================== //
+// ==   Gestion des espaces
+// ========================================================================== //
+@mixin global-space(){
+	.white-space {
+		li > span {
+			display: inline-block;
+			background: $main-color;
+			&:first-child {
+				width: 30%;
+				background: transparent;
+			}
+		}
+	}
+}
+
+@mixin demo-typo(){
+	.fonts { margin: 0; padding: 0; }
+	.defaultFont {
+		font-family: $global-font-family;
+		font-size: 1em;
+	}
+	.OpenSansCondensedLight {
+		font-family: $custom-light-font-family;
+		font-size: 2em;
+	}
+	.OpenSansCondensedBold {
+		font-family: $custom-bold-font-family;
+		font-size: 2em;
+	}
+	.fcmssymbols {
+		font-family: 'fcmssymbols';
+		font-size: 2em;
+	}
+	@include global-space;
+}

@@ -1,0 +1,16 @@
+@charset "ISO-8859-15";
+
+@mixin grid-debug(){
+	.row {
+		background-color: #fcc;
+		//outline: 1px solid red;
+	}
+	//.column { outline: 1px solid green; }
+	//.columns { outline: 1px solid blue; }
+	.grid-block {
+		background-color: #cfc;
+		li {
+			background-color: #ccf;
+		}
+	}
+}

@@ -1,0 +1,122 @@
+@charset "ISO-8859-15";
+
+// ========================= Variable par defaut ============================= //
+
+$form-text-color: $third-color-dark !default;
+$form-text-size: 0.9em !default;
+$form-text-size: 1em !default;
+$form-link-text-color: $white !default;
+$form-placeholder-text-color: $black !default;
+
+$form-title-text-color: $form-link-text-color !default;
+$form-title-shadow-color: #1e526e !default;
+$form-title-border-color: $item-listview-border-color !default;
+
+$form-header-border-color-dark: #246184 !default;
+$form-header-border-color-light:#3692c7 !default;
+$form-header-border-radius: 4px !default;
+
+$form-input-border-color: #4777a3 !default;
+
+$form-button-bg-color: $secondary-color !default;
+$form-button-hover-bg-color: $secondary-color-dark !default;
+$form-button-border-color: #3d759f !default;
+$form-button-border-radius: 6px !default;
+$form-button-text-color: #fff !default;
+$form-button-text-shadow-color: #ed3c00 !default;
+
+$form-icon-button-color: #aa4000 !default;
+$form-icon-button-light-color: #f77b12 !default;
+$form-icon-button-dark-color: #8c3400 !default;
+
+// ====================================================================== //
+// = Initialisation valable pour tous les formulaires = //
+// ====================================================================== //
+@mixin placeholder($color){
+	::-webkit-input-placeholder { color:$color; }
+	::-moz-placeholder { color:$color; }
+	:-ms-input-placeholder { color:$color; }
+	input:-moz-placeholder { color:$color; }
+}
+
+@mixin default-form(){
+	form {
+		font-family: $global-font-family;
+		font-size: $form-text-size;
+		color: $form-text-color;
+		.row {
+			margin-bottom: 3px;
+		}
+		h3, .h3 {
+			border-bottom: 1px solid $form-title-border-color;
+			margin-bottom: 0.6em;
+			padding-bottom: 0.2em;
+			text-shadow: #fff 1px 1px;
+		}
+	}
+	.block-form {
+		@extend .third-bg-light-ultra;
+		padding: 0.5em 1.2em;
+		margin: 1em 0;
+	}
+	fieldset {
+		border:none;
+		@include clearfix();
+	}
+	input[type='text'],
+	input[type='password'],
+	input[type='email'],
+	input[type='url'],
+	input[type='tel'],
+	select, textarea, label {
+		font: 1.45em/1em $custom-light-font-family;
+	}
+	input[type='text'],
+	input[type='password'],
+	input[type='email'],
+	input[type='url'],
+	input[type='tel'],
+	select, textarea {
+		border: 1px solid #e0e3e5;
+		background-color: #fff;
+		padding: 0.5em;
+		.columns & {
+			width: 99%;
+		}
+		&[required]:focus {
+			@include box-shadow(rgba(255,0,0,0.4) 0 0 3px 1px);
+		}
+	}
+	input[type='text'],
+	input[type='password'],
+	input[type='email'],
+	input[type='url'],
+	input[type='tel'],
+	select {
+		&:focus {
+			background-color: #f9f9f9;
+			@include box-shadow(rgba(45,141,191,0.4) 0 0 5px 1px);
+			border: 1px solid #ccc;
+		}
+	}
+	label {
+		display: inline-block;
+		&.hover {
+			display: block;
+			padding: 0.4em 0;
+			&:hover, &:focus {
+				background: #d8e6ed;
+			}
+		}
+
+	}
+	@include respondTo(mediumscreen){
+		label {
+			-webkit-text-size-adjust: 96%;
+		}
+	}
+	.columns select {
+		width: 96.7%;
+	}
+	@include placeholder($form-placeholder-text-color);
+}

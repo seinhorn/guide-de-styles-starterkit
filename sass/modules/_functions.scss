@@ -1,0 +1,34 @@
+@charset "ISO-8859-15";
+// =============================================================== //
+// = Contient toutes les fonctions utilitaires = //
+// =============================================================== //
+// prend en argument 2 valeurs numérique ou en pixels et retourne le
+// facteur des 2 en %
+@function calc-percent($target, $container) {
+  @return ($target / $container) * 100%;
+}
+// @debug calc-percent(1px, 2px);
+
+// Idem calc-percent mais renvois la valeur suffixé de l'unité em
+@function calcEm($cible, $context) {
+  @return #{$cible / $context}em;
+}
+// @debug calcEm(1px, 2px);
+
+// Permet le calcule des valeurs de grilles fluide
+@function gridCalc($colNumber, $totalColumns) {
+	@return percentage(($colNumber / $totalColumns));
+}
+
+
+// Conversion des chiffres de 1 à 24 dans leur version nominal
+@function convert-number-to-word($num) {
+  $count:1;
+  @each $word in one,two,three,four,five,six,seven,eight,nine,ten,eleven,
+    twelve,thirteen,fourteen,fifteen,sixteen,seventeen,eighteen,nineteen,
+    twenty,twentyone,twentytwo,twentythree,twentyfour{
+    @if ($count == $num) { @return $word; }
+    $count: $count + 1;
+  }
+  @return "invalid";
+}

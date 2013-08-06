@@ -1,32 +1,21 @@
 @charset "ISO-8859-15";
-// ============== Feuille de style genere pour le guide de style = //
-// =============================================================== //
+// ==   Feuille de style genere pour le guide de style
+// ========================================================================== //
 @import "compass";
 @import "../settings";
 @import "../modules/reset";
+@import "../modules/respond";
+@import "../modules/images/bg";
 @import "../modules/fonts";
+@import "../modules/typography";
+@import "../debug";
+@import "../modules/fx/masques/masques";
+@import "css/color-swatches";
 
 @include reset();
 @include init-global-fonts();
-//@import "../modules/respond";
-//@import "../modules/images/bg";
-//@import "../modules/fx/masques/masques";
-//@import "css/color-swatches";
-//@include color-swatches();
-//@import "../modules/utils";
+@include init-typo();
+@include demo-typo();
+@include color-swatches();
 
-// =============================================================== //
-// = Add typography pattern = //
-// =============================================================== //
-//.white-space {
-//	li > span {
-//		display: inline-block;
-//		background: $main-color;
-//		&:first-child {
-//			width: 30%;
-//			background: transparent;
-//		}
-//	}
-//}
-
-
+@import "../modules/utils";

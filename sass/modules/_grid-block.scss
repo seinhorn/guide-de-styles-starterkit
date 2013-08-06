@@ -1,0 +1,26 @@
+@charset "ISO-8859-15";
+
+@mixin grid-block(){
+	.grid-block {
+		display: block;
+		padding: 0;
+		@include respondTo(moresmallscreen) {
+			display: table;
+			width: 100%;
+			table-layout: fixed;
+			li {
+				display: table-cell;
+				width: 20%;
+				outline: 1px solid red;
+				&:last-child {
+					width: 25%;
+				}
+			}
+		}
+		li {
+			margin-bottom: 1em;
+		}
+
+	}
+
+}

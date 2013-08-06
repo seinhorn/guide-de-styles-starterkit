@@ -1,0 +1,82 @@
+@charset "ISO-8859-15";
+
+@import "compass/css3";
+// =================================== //
+// = styles du block "Code couleur"  = //
+// =================================== //
+
+@mixin display-color-name($color){
+	position: relative;
+	&::after {
+		content: '#{$color*1}';
+		display: block;
+		position: absolute;
+		left: 0;
+		bottom: -1.9em;
+		width: 100%;
+		height: 1.5em;
+		text-align: center;
+	}
+}
+@mixin color-swatches(){
+	.colors {
+		.color {
+			display: inline-block;
+			margin: 0 1em 1em 0;
+			p {
+				border: 2px solid #fff;
+				@include box-shadow(rgba(0,0,0,0.2) 0 0 3px);
+				width: 60px;
+				height: 60px;
+				margin-bottom:0.2em;
+				padding: 1em;
+			}
+			span {
+				display: block;
+				text-align: center;
+			}
+		}
+	}
+	.primary-bg-color {
+		background-color: $main-color;
+		@include display-color-name($main-color);
+	}
+	.primary-bg-color-dark {
+		background-color: $main-color-dark;
+		@include display-color-name($main-color-dark);
+	}
+	.primary-bg-color-dark-plus {
+		background-color: $main-color-dark-plus;
+		@include display-color-name($main-color-dark-plus);
+	}
+
+	.secondary-bg-color {
+		background-color: $secondary-color;
+		@include display-color-name($secondary-color);
+	}
+	.secondary-bg-color-light {
+		background-color: $secondary-color-light;
+		@include display-color-name($secondary-color-light);
+	}
+	.secondary-bg-color-dark {
+		background-color: $secondary-color-dark;
+		@include display-color-name($secondary-color-dark);
+	}
+
+	.third-bg-color {
+		background-color: $third-color;
+		@include display-color-name($third-color);
+	}
+	.third-bg-color-light {
+		background-color: $third-color-light;
+		@include display-color-name($third-color-light);
+	}
+	.third-bg-color-light-ultra {
+		background-color: $third-color-light-ultra;
+		@include display-color-name($third-color-light-ultra);
+	}
+	.third-bg-color-dark {
+		background-color: $third-color-dark;
+		@include display-color-name($third-color-dark);
+	}
+}

@@ -11,70 +11,69 @@
 		<link rel="stylesheet" href="css/tests/app.css"/>
 		<link rel="stylesheet" href="js/vendor/snippet/jquery.snippet.css"/>
 	</head>
-	<body>
+	<body data-tag-name="body" class="simple">
 		<div class="container">
-			<nav>
-				<ul>
-					<li>Charte</li>
-					<li>Layout</li>
-					<li>UI</li>
-					<li>Formulaires</li>
-					<li>Modules</li>
-				</ul>
-			</nav>
-			<div class="main-wrap">
-				<div id="main" class="group-section full-column">
-					<div class="center-column section" role="main">
+			<header>
+				<nav role="navigation">
+					<ul>
+						<li><a href="" data-panelpage="charte">Charte</a></li>
+						<li><a href="" data-panelpage="layout">Layout</a></li>
+						<li><a href="" data-panelpage="ui">UI</a></li>
+						<li><a href="" data-panelpage="forms">Formulaires</a></li>
+						<li><a href="" data-panelpage="modules">Modules</a></li>
+					</ul>
+				</nav>
+			</header>
+
+			<section role="main">
 				
-						<div class="block-section panel-page default" id="charte"><!-- Page charte -->
-							<h2><span>Charte graphique</span></h2>
-							<div class="block-section" id="color-swatches"></div>
-							<div class="block-section" id="fonts"></div>
-							<div class="block-section" id="typography"></div>
-						</div><!-- //#charte -->
+				<div class="block-section panel-page default" id="charte"><!-- Page charte -->
+					<h2><span>Charte graphique</span></h2>
+					<div class="block-section" id="color-swatches"></div>
+					<div class="block-section" id="fonts"></div>
+					<div class="block-section" id="typography"></div>
+				</div><!-- //#charte -->
 
-						<!-- <div class="block-section panel-page" id="layout"> --><!-- Page layout -->
-						<!-- <h2><span>Layout</span></h2>
-						<div class="block-section" id="grille"></div>
-						<div class="block-section" id="grid-block"></div>
-						<div class="block-section" id="panel"></div>
-						<div class="block-section" id="off-canvas"></div>
-					</div> -->
+				<div class="block-section panel-page" id="layout"><!-- Page layout -->
+					<h2><span>Layout</span></h2>
+					<div class="block-section" id="grid"></div>
+					<div class="block-section" id="grid-block"></div>
+					<div class="block-section" id="panel"></div>
+					<div class="block-section" id="off-canvas"></div>
+				</div>
 
-					<!-- <div class="block-section panel-page" id="ui"> --><!-- Page ui -->
-						<!-- <h2><span>Interface utilisateur</span></h2>
-						<div class="block-section" id="boutons"></div>
-						<div class="block-section" id="tooltips"></div>
-					</div> -->
+				<div class="block-section panel-page" id="ui"><!-- Page ui -->
+					<h2><span>Interface utilisateur</span></h2>
+					<div class="block-section" id="boutons"></div>
+					<div class="block-section" id="tooltips"></div>
+				</div>
 
-					<!-- <div class="block-section panel-page" id="forms"> --><!-- Page formulaires -->
-						<!-- <h2><span>Les formulaires</span></h2>
-						<div class="block-section" id="form"></div>
-						<div class="block-section" id="alert-boxes"></div>
-					</div> -->
+				<div class="block-section panel-page" id="forms"><!-- Page formulaires -->
+					<h2><span>Les formulaires</span></h2>
+					<div class="block-section" id="form"></div>
+					<div class="block-section" id="alert-boxes"></div>
+				</div>
 
-					<!-- <div class="block-section panel-page" id="modules"> --><!-- Page modules -->
-						<!-- <h2><span>Les modules</span></h2>
-					</div> --><!-- // page modules -->
+				<div class="block-section panel-page" id="modules"><!-- Page modules -->
+					<h2><span>Les modules</span></h2>
+				</div><!-- // page modules -->
 
-						<!-- <div class="block-section panel-page" id="widgets"> --><!-- Page widgets -->
-						<!-- <h2><span>Les Widgets</span></h2>
-						<div class="block-section" id="demo-widget"></div>
-					</div> --><!-- // page widgets -->
+				<div class="block-section panel-page" id="widgets"><!-- Page widgets -->
+					<h2><span>Les Widgets</span></h2>
+					<div class="block-section" id="demo-widget"></div>
+				</div><!-- // page widgets -->
 
-						<!-- <div class="block-section panel-page" id="pubs"> --><!-- Page pubs -->
-						<!-- <h2><span>Les Publicités</span></h2>
-						<div class="block-section" id="demo-pub"></div>
-					</div> --><!-- // page pubs -->
+				<div class="block-section panel-page" id="pubs"><!-- Page pubs -->
+					<h2><span>Les Publicités</span></h2>
+					<div class="block-section" id="demo-pub"></div>
+				</div><!-- // page pubs -->
 
-						<div class="block-section panel-page" id="fx"><!-- Page fx -->
-							<h2><span>Effets</span></h2>
-							<div class="block-section" id="masques"></div>
-						</div><!-- // Page fx -->
+				<div class="block-section panel-page" id="fx"><!-- Page fx -->
+					<h2><span>Effets</span></h2>
+					<div class="block-section" id="masques"></div>
+				</div><!-- // Page fx -->
 
-					</div>
-				</div><!-- //#main -->
-			</div><!-- //.main-wrap -->
+			</section>
 		</div><!-- //.container -->
 		<script type="text/javascript" src="js/vendor/jquery/1.8.3/jquery.js"></script>
 		<script type="text/javascript" src="js/vendor/jquery-ui/1.9.2/jquery-ui-1.9.2.custom.js"></script>
@@ -112,7 +111,7 @@
 			$("#color-swatches").loadPattern({file:'patterns/charte/color-swatches.html', loadContext: '.page-color-swatches'});
 			$("#fonts").loadPattern({file:'patterns/charte/fonts.html', loadContext: '.page-fonts'});
 			$("#typography").loadPattern({file:'patterns/charte/typography.html', loadContext: '.page-typography'});
-			$("#grille").loadPattern({file:'patterns/layout/grid-ce.html', loadContext: '.page-grille'});
+			$("#grid").loadPattern({file:'patterns/layout/grid.html', loadContext: '.page-grid'});
 			$("#grid-block").loadPattern({file:'patterns/layout/grid-block.html', loadContext: '.page-grid-block'});
 			$("#panel").loadPattern({file:'patterns/layout/panel.html', loadContext: '.page-panel'});
 			$("#off-canvas").loadPattern({file:'patterns/layout/off-canvas.html', loadContext: '.page-off-canvas'});

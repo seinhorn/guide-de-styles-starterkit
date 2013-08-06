@@ -1,0 +1,101 @@
+// =============================================================== //
+@import "compass/css3";
+@import "../settings";
+
+// Construction de la sprite par compass à partir des images
+// du répertoire http://assets.cadremploi.fr/assets/img/icones/ qui ont l'extension
+// png
+@import "icones/*.png";
+@include all-icones-sprites;
+
+@mixin icons-img($img, $left-text, $left:false, $top:false){
+	position: relative;
+	&:before {
+		@extend .icones-#{$img};
+		display: block;
+		content: '';
+		width: image-width('icones/#{$img}.png');
+		height: image-height('icones/#{$img}.png');
+		position: absolute;
+		@if $left { left: 	$left; }
+		@if $top { 	top: 	$top; }
+	}
+	span { text-indent: $left-text; }
+}
+
+@mixin icons-img-ie7($img, $left-text){
+	background: url('img/icones/#{$img}.png') no-repeat (image-width('icones/#{$img}.png')+7)/2 6px;
+	position: relative;
+	span {
+		text-indent: $left-text;
+	}
+}
+
+@mixin icons-img-ie8($img, $left){
+	background: url('img/icones/#{$img}.png') no-repeat #{$left}px (image-width('icones/#{$img}.png')+7)/2;
+	position: relative;
+}
+
+// Icones pour les boîtes d'alerte (cf. alert-boxes)
+@mixin icons-alert-boxes($img){
+	&:before {
+		@extend .icones-#{$img};
+		display: block;
+		content: '';
+		width: image-width('icones/#{$img}.png');
+		height: image-height('icones/#{$img}.png');
+		position: absolute;
+		left: 0.7em;
+		top: 50%;
+		margin-top:-(image-width('icones/#{$img}.png'))/2;
+	}
+}
+
+@mixin icons($texte, $display:'before', $position:false, $top:false, $left:false, $title:false, $color:false, $font-size:false, $pb:false, $pt:false){
+	&:#{$display} {
+		content: $texte;
+		@if $position { position: $position; }
+		@if $top { top: $top; }
+		@if $left { left: $left; }
+		display: block;
+		@if $pt { padding-top: $pt; }
+		@if $pb { padding-bottom: $pb; }
+		font-family:"fcmssymbols";
+		text-transform: none;
+		@if $font-size {
+			font-size: $font-size;
+		} @else {
+			font-size: 3em;
+		}
+		line-height: 1em;
+	}
+	@if $title {
+		&:after {
+			content: $title;
+			font: 0.8em/0.9em $custom-bold-font-family;
+	    	text-transform: uppercase;
+		}
+	}
+	&:before, &:after {
+		@if $color {
+			color: #{$color};
+		} @else {
+			color: #000;
+		}
+	}
+}
+@mixin icons-ie($img, $display:'before', $top:false, $left:false, $pb:false, $pt:false){
+	&:#{$display} {
+		content: url('icones/#{$img}.png');
+		display: block;
+		@if $pt { padding-top: $pt; }
+		@if $pb { padding-bottom: $pb; }
+		@if $left { left: $left; }
+		@if $top { top: $top; }
+	}
+}
+
+.fcmsicons {
+	font-family:"fcmssymbols";
+	text-transform: none;
+}
