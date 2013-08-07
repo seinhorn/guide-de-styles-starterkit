@@ -6,16 +6,30 @@
 @import "../modules/reset";
 @import "../modules/respond";
 @import "../modules/images/bg";
+@import "../modules/icons";
 @import "../modules/fonts";
 @import "../modules/typography";
-@import "../debug";
+@import "../modules/boutons/boutons";
+@import "../modules/forms/forms";
+@import "../modules/alert-boxes";
+@import "../modules/grid";
+@import "../modules/grid-block";
+@import "../modules/panel";
 @import "../modules/fx/masques/masques";
 @import "css/color-swatches";
 
 @include reset();
 @include init-global-fonts();
 @include init-typo();
+@include init-grid();
+@include grid-block();
+@include init-panel();
+@include action-buttons();
+@include default-form();
+@include alert-boxes();
 @include demo-typo();
 @include color-swatches();
+@include init-masques();
 
 @import "../modules/utils";
+//@import "../debug";

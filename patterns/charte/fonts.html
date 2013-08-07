@@ -4,11 +4,11 @@
 <!--[if IE 8]><html lang="fr" class="no-js lt-ie9 ie8"> <![endif]-->
 <!--[if IE 9]><html lang="fr" class="no-js lt-ie10 ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html lang="fr" class="no-js"> <!--<![endif]-->
+<html lang="fr" class="no-js" xmlns="http://www.w3.org/1999/html"> <!--<![endif]-->
 <head>
 	<meta charset="iso-8859-15">
 	<title>Les fontes</title>
-	<link rel="stylesheet" href="css/tests/css/fonts.css">
+	<link rel="stylesheet" href="../../css/tests/css/fonts.css">
 </head>
 <body>
 <div class="page-fonts container">
@@ -16,10 +16,21 @@
 	<div class="section">
 		<div class="row">
 			<div class="twelve columns">
-				<p class="fonts defaultFont">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz &&eacute;"'(-&egrave;_&ccedill;&agrave;)=#{[|^@]}1234567890+</p>
-				<p class="fonts OpenSansCondensedLight">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz &&eacute;"'(-&egrave;_&ccedill;&agrave;)=#{[|^@]}1234567890+</p>
-				<p class="fonts OpenSansCondensedBold">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz &&eacute;"'(-&egrave;_&ccedill;&agrave;)=#{[|^@]}1234567890+</p>
-				<p class="fonts fcmssymbols">abcdefgmnptu</p>
+				<dl>
+					<dt>Police par defaut : "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif &agrave; 1em</dt>
+					<dd class="fonts defaultFont">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz &&eacute;"'(-&egrave;_&ccedill;&agrave;)=#{[|^@]}1234567890+</dd>
+				</dl>
+				<p>Police custom : OpenSansCondensed en light et en bold affich&eacute; en 2em</p>
+				<dl>
+					<dt>Light :</dt>
+					<dd class="fonts OpenSansCondensedLight">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz &&eacute;"'(-&egrave;_&ccedill;&agrave;)=#{[|^@]}1234567890+</dd>
+					<dt>Bold :</dt>
+					<dd class="fonts OpenSansCondensedBold">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz &&eacute;"'(-&egrave;_&ccedill;&agrave;)=#{[|^@]}1234567890+</dd>
+				</dl>
+				<dd>
+					<dt>Icon font : affich&eacute; en 2em</dt>
+					<dd class="fonts fcmssymbols">abcdefgmnptu</dd>
+				</dd>
 			</div>
 		</div>
 	</div>

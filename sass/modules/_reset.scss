@@ -26,5 +26,8 @@
 }
 
 @mixin reset(){
+	*, *:after, *:before {
+		@include box-sizing(border-box);
+	}
 	@include normalize-global;
 }

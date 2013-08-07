@@ -3,8 +3,9 @@
 @import "../../settings";
 @import "../../modules/reset";
 @import "../../modules/images/bg";
-@import "../../modules/utils";
 @import "../../modules/panel";
 
 @include reset();
 @include init-panel();
+
+@import "../../modules/utils";
