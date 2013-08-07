@@ -1,0 +1,8 @@
+*.ipr
+*.iml
+*.iws
+.idea/*
+css/*
+.sass-cache/*
+img/boutons-*.png
+img/icones-*.png
