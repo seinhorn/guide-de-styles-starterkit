@@ -15,6 +15,7 @@
 @import "../modules/grid";
 @import "../modules/grid-block";
 @import "../modules/panel";
+@import "../modules/nav";
 @import "../modules/fx/masques/masques";
 @import "css/color-swatches";
 
@@ -27,9 +28,27 @@
 @include action-buttons();
 @include default-form();
 @include alert-boxes();
+@include init-nav();
+
 @include demo-typo();
 @include color-swatches();
 @include init-masques();
 
 @import "../modules/utils";
+
+@include respondTo(smallscreen) {
+	#mdetect {
+		display: block;
+		height: 0;
+	}
+}
+@include respondTo(mediumscreen) {
+	#mdetect {
+		display: none;
+	}
+}
+@include respondTo(largemscreen) {
+	#mdetect { display: none; }
+}
+
 //@import "../debug";

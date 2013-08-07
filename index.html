@@ -12,15 +12,50 @@
 		<link rel="stylesheet" href="js/vendor/snippet/jquery.snippet.css"/>
 	</head>
 	<body data-tag-name="body" class="simple">
+		<div id="mdetect"></div>
 		<div class="container">
 			<header>
-				<nav role="navigation">
+				<nav role="navigation" tabindex="0">
 					<ul>
-						<li><a href="" data-panelpage="charte">Charte</a></li>
-						<li><a href="" data-panelpage="layout">Layout</a></li>
-						<li><a href="" data-panelpage="ui">UI</a></li>
-						<li><a href="" data-panelpage="forms">Formulaires</a></li>
-						<li><a href="" data-panelpage="modules">Modules</a></li>
+						<li>
+							<a href="" data-panelpage="charte">Charte</a>
+							<ul>
+								<li><a href="">Code couleur</a></li>
+								<li><a href="">Polices</a></li>
+								<li><a href="">Typography</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="" data-panelpage="layout">Layout</a>
+							<ul>
+								<li><a href="">Layout simple</a></li>
+								<li><a href="">Off canvas</a></li>
+								<li><a href="">Grille</a></li>
+								<li><a href="">Bloc de Grille</a></li>
+								<li><a href="">Panels</a></li>
+								<li><a href="">Tabs</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="" data-panelpage="ui">UI</a>
+							<ul>
+								<li><a href="">Navigation</a></li>
+								<li><a href="">Boutons</a></li>
+								<li><a href="">Tooltips</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="" data-panelpage="forms">Formulaires</a>
+							<ul>
+								<li><a href="">Alert box</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="" data-panelpage="fx">Effets</a>
+							<ul>
+								<li><a href="">Masque</a></li>
+							</ul>
+						</li>
 					</ul>
 				</nav>
 			</header>
@@ -44,6 +79,7 @@
 
 				<div class="block-section panel-page" id="ui"><!-- Page ui -->
 					<h2><span>Interface utilisateur</span></h2>
+					<div class="block-section" id="nav"></div>
 					<div class="block-section" id="boutons"></div>
 					<div class="block-section" id="tooltips"></div>
 				</div>
@@ -53,20 +89,6 @@
 					<div class="block-section" id="form"></div>
 					<div class="block-section" id="alert-boxes"></div>
 				</div>
-
-				<div class="block-section panel-page" id="modules"><!-- Page modules -->
-					<h2><span>Les modules</span></h2>
-				</div><!-- // page modules -->
-
-				<div class="block-section panel-page" id="widgets"><!-- Page widgets -->
-					<h2><span>Les Widgets</span></h2>
-					<div class="block-section" id="demo-widget"></div>
-				</div><!-- // page widgets -->
-
-				<div class="block-section panel-page" id="pubs"><!-- Page pubs -->
-					<h2><span>Les Publicités</span></h2>
-					<div class="block-section" id="demo-pub"></div>
-				</div><!-- // page pubs -->
 
 				<div class="block-section panel-page" id="fx"><!-- Page fx -->
 					<h2><span>Effets</span></h2>
@@ -108,16 +130,7 @@
 				});
 			};
 
-			$("#color-swatches").loadPattern({file:'patterns/charte/color-swatches.html', loadContext: '.page-color-swatches'});
-			$("#fonts").loadPattern({file:'patterns/charte/fonts.html', loadContext: '.page-fonts'});
-			$("#typography").loadPattern({file:'patterns/charte/typography.html', loadContext: '.page-typography'});
-			$("#grid").loadPattern({file:'patterns/layout/grid.html', loadContext: '.page-grid'});
-			$("#grid-block").loadPattern({file:'patterns/layout/grid-block.html', loadContext: '.page-grid-block'});
-			$("#panel").loadPattern({file:'patterns/layout/panel.html', loadContext: '.page-panel'});
-			$("#off-canvas").loadPattern({file:'patterns/layout/off-canvas.html', loadContext: '.page-off-canvas'});
-			$("#boutons").loadPattern({file:'patterns/ui/boutons.html', loadContext: '.page-boutons'});
-			$("#tooltips").loadPattern({file:'patterns/ui/tooltips.html', loadContext: '.page-tooltips'});
-			$("#form").loadPattern({file:'patterns/forms/forms.html', loadContext: '.page-form'});
+			$('nav[role="navigation"]').affichePanelPage();
 
 			// Pattern boites d'alerte (Alert Boxes)
 			$.alertBoxes = function() {
@@ -128,6 +141,18 @@
 				});
 			};
 
+
+			$("#color-swatches").loadPattern({file:'patterns/charte/color-swatches.html', loadContext: '.page-color-swatches'});
+			$("#fonts").loadPattern({file:'patterns/charte/fonts.html', loadContext: '.page-fonts'});
+			$("#typography").loadPattern({file:'patterns/charte/typography.html', loadContext: '.page-typography'});
+			$("#grid").loadPattern({file:'patterns/layout/grid.html', loadContext: '.page-grid'});
+			$("#grid-block").loadPattern({file:'patterns/layout/grid-block.html', loadContext: '.page-grid-block'});
+			$("#panel").loadPattern({file:'patterns/layout/panel.html', loadContext: '.page-panel'});
+			$("#off-canvas").loadPattern({file:'patterns/layout/off-canvas.html', loadContext: '.page-off-canvas'});
+			$("#boutons").loadPattern({file:'patterns/ui/boutons.html', loadContext: '.page-boutons'});
+			$("#tooltips").loadPattern({file:'patterns/ui/tooltips.html', loadContext: '.page-tooltips'});
+			$("#nav").loadPattern({file:'patterns/ui/nav.html', loadContext: '.page-nav'});
+			$("#form").loadPattern({file:'patterns/forms/forms.html', loadContext: '.page-form'});
 			$("#alert-boxes").loadPattern(
 					{
 						file:'patterns/forms/alert-boxes.html',
@@ -137,16 +162,32 @@
 						$.alertBoxes();
 					}
 			);
-
-
 			$("#masques").loadPattern({file:'patterns/fx/masques.html', loadContext: '.masque'});
-
 
 			$("pre.htmlCode").snippet("html",{style:"acid",transparent:true});
 
-		})(jQuery);
+			var bodyViewportClasses = function() {
+				var nav_display = $('#mdetect').css('display');
 
-		$(document).foundation();
+				if (nav_display === 'block') {
+					$("body").removeClass("big-screen").addClass("small-screen");
+				}
+				if (nav_display === 'none') {
+					$("body").removeClass("small-screen").addClass("big-screen");
+				}
+			}
+
+
+			// add/remove classes everytime the window resize event fires
+			$(window).resize(function(){
+				bodyViewportClasses();
+			});
+
+			bodyViewportClasses();
+
+			$(document).foundation();
+
+		})(jQuery);
 		</script>
 	</body>
 </html>
