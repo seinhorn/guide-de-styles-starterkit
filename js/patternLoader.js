@@ -1,11 +1,8 @@
 /**
- * Created with IntelliJ IDEA.
- * Date: 13/05/13
- * Time: 12:28
- * To change this template use File | Settings | File Templates.
+ * Module de chargement de pattern
  */
-;(function($){
-	$.fn.loadPattern = function (opts, myCcallback) {
+(function($){
+	$.fn.patternLoader = function (opts, myCcallback) {
 		// comment on valide que le type est objet
 		var settings = {
 			file: null
