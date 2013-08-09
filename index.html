@@ -16,7 +16,8 @@
 		<div class="container">
 			<header>
 				<nav role="navigation" tabindex="0">
-					<ul>
+					<a href="#menu">Menu</a>
+					<ul id="menu">
 						<li>
 							<a href="" data-panelpage="charte">Charte</a>
 							<ul>
@@ -110,6 +111,25 @@
 		<script type="text/javascript">
 		(function($){
 
+			var bodyViewportClasses = function() {
+				var nav_display = $('#mdetect').css('display');
+
+				if (nav_display === 'block') {
+					$("body").removeClass("big-screen").addClass("small-screen");
+				}
+				if (nav_display === 'none') {
+					$("body").removeClass("small-screen").addClass("big-screen");
+				}
+			}
+
+
+			// add/remove classes everytime the window resize event fires
+			$(window).resize(function(){
+				bodyViewportClasses();
+			});
+
+			bodyViewportClasses();
+
 			$.fn.affichePanelPage = function() {
 
 				return this.each(function(){
@@ -130,7 +150,34 @@
 				});
 			};
 
-			$('nav[role="navigation"]').affichePanelPage();
+			$.fn.navigation = function() {
+
+				return this.each(function() {
+
+					var smallScreen = $('.small-screen');
+
+					if(smallScreen.length > 0){
+
+						$(this).children('a')
+							.on('click', function(event) {
+								event.preventDefault();
+								$(this).next().toggleClass('active');
+							});
+
+						$(this).find('ul').find('a')
+							.on('click', function(event) {
+								event.preventDefault();
+								$(this).parents('ul').find('ul').removeClass('active');
+								$(this).next('ul').toggleClass('active');
+							});
+
+					}
+
+				});
+
+			};
+
+			$('nav[role="navigation"]').affichePanelPage().navigation();
 
 			// Pattern boites d'alerte (Alert Boxes)
 			$.alertBoxes = function() {
@@ -165,25 +212,6 @@
 			$("#masques").loadPattern({file:'patterns/fx/masques.html', loadContext: '.masque'});
 
 			$("pre.htmlCode").snippet("html",{style:"acid",transparent:true});
-
-			var bodyViewportClasses = function() {
-				var nav_display = $('#mdetect').css('display');
-
-				if (nav_display === 'block') {
-					$("body").removeClass("big-screen").addClass("small-screen");
-				}
-				if (nav_display === 'none') {
-					$("body").removeClass("small-screen").addClass("big-screen");
-				}
-			}
-
-
-			// add/remove classes everytime the window resize event fires
-			$(window).resize(function(){
-				bodyViewportClasses();
-			});
-
-			bodyViewportClasses();
 
 			$(document).foundation();
 
