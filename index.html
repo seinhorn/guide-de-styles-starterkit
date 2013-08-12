@@ -14,7 +14,7 @@
 	<body data-tag-name="body" class="simple">
 		<div id="mdetect"></div>
 		<div class="container">
-			<header>
+			<header class="header">
 				<nav role="navigation" tabindex="0">
 					<a href="#menu">Menu</a>
 					<ul id="menu">
@@ -61,7 +61,7 @@
 				</nav>
 			</header>
 
-			<section role="main">
+			<section role="main" class="section">
 				
 				<div class="block-section panel-page default" id="charte"><!-- Page charte -->
 					<h2><span>Charte graphique</span></h2>
@@ -98,6 +98,165 @@
 
 			</section>
 		</div><!-- //.container -->
+
+		<div class="invisible" id="template">
+			<div class="tabs" data-section>
+				<section class="tab">
+					<p class="title" data-section-title><a href="#panel1">Example</a></p>
+					<div class="content" data-section-content>
+						<p>Contenu panel 1</p>
+						<h1>Titre de niveau 1 &mdash; h1</h1>
+					</div>
+				</section>
+				<section class="tab">
+					<p class="title" data-section-title><a href="#panel2">Html</a></p>
+					<div class="content" data-section-content>
+						<p>Contenu panel 2</p>
+						<pre class="htmlCode">&lt;h1&gt;Titre de niveau 1 &mdash; h1&lt;/h1&gt;</pre>
+					</div>
+				</section>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var guiStructure = {
+				panelPage: [
+					{
+						id: 'charte',
+						title: 'Charte',
+						hash: '',
+						patterns: [
+							{
+								id: 'color-swatches', 
+								title: 'Code couleur', 
+								hash: '', 
+								src: 'patterns/charte/color-swatches.html', 
+								loadContext: '.page-color-swatches'
+							},
+							{
+								id: 'fonts', 
+								title: 'Polices', 
+								hash: '', 
+								src: 'patterns/charte/fonts.html', 
+								loadContext: '.page-fonts'
+							},
+							{
+								id: 'typography', 
+								title: 'Typography', 
+								hash: '', 
+								src: 'patterns/charte/typography.html', 
+								loadContext: '.page-typography'
+								}
+						]
+					},
+					{
+						id: 'layout',
+						title: 'Layout',
+						hash: '',
+						patterns: [
+							{
+								id: 'layout-simple',
+								title: 'Layout simple', 
+								hash: '', 
+								src: '', 
+								loadContext: ''
+							},
+							{
+								id: 'off-canvas',
+								title: 'Off canvas', 
+								hash: '', 
+								src: '', 
+								loadContext: ''
+							},
+							{
+								id: 'grid',
+								title: 'Grille', 
+								hash: '', 
+								src: '', 
+								loadContext: ''
+							},
+							{
+								id: 'grid-block',
+								title: 'Bloc de Grille', 
+								hash: '', 
+								src: '', 
+								loadContext: ''
+							},
+							{
+								id: 'panel', 
+								title: 'Panels', 
+								hash: '', 
+								src: '', 
+								loadContext: ''
+							},
+							{
+								id: 'tabs', 
+								title: 'Tabs', 
+								hash: '', 
+								src: '', 
+								loadContext: ''
+							}
+						]
+					},
+					{
+						id: 'ui',
+						title: 'Interface utilisateur',
+						hash: '',
+						patterns: [
+							{
+								id: 'Navigation', 
+								title: '', 
+								hash: '', 
+								src: '', 
+								loadContext: ''
+							},
+							{
+								id: 'Boutons', 
+								title: '', 
+								hash: '', 
+								src: '', 
+								loadContext: ''
+							},
+							{
+								id: 'Tooltips', 
+								title: '', 
+								hash: '', 
+								src: '', 
+								loadContext: ''
+							}
+						]
+					},
+					{
+						id: 'forms',
+						title: 'Formulaires',
+						hash: '',
+						patterns: [
+							{
+								id: 'Alert box', 
+								title: '', 
+								hash: '', 
+								src: '', 
+								loadContext: ''
+							}
+						]
+					},
+					{
+						id: 'fx',
+						title: 'Effets',
+						hash: '',
+						patterns: [
+							{
+								id: 'Masque', 
+								title: '', 
+								hash: '', 
+								src: '', 
+								loadContext: ''
+							}
+						]
+					}
+				]
+			};
+			console.log(guiStructure);
+		</script>
 		<script type="text/javascript" data-main="js/main" src="js/vendor/require/2.1.8/require.js"></script>
 	</body>
 </html>
