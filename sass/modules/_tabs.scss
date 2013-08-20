@@ -46,8 +46,6 @@
 				display: none;
 				top: -1px;
 				> *:last-child { margin-bottom: 0; }
-				/* Pose problème sur le pattern alert boxes !
-				   => annule les padding des éléments  */
 				//> *:first-child { padding-top: 0; }
 				//> *:last-child:not(.flex-video) { padding-bottom: 0; }
 			}

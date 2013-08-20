@@ -63,35 +63,35 @@
 
 			<section role="main" class="section">
 				
-				<div class="block-section panel-page default" id="charte"><!-- Page charte -->
+				<div class="panel-page default" id="charte"><!-- Page charte -->
 					<h2><span>Charte graphique</span></h2>
 					<div class="block-section" id="color-swatches"></div>
 					<div class="block-section" id="fonts"></div>
 					<div class="block-section" id="typography"></div>
 				</div><!-- //#charte -->
 
-				<div class="block-section panel-page" id="layout"><!-- Page layout -->
+				<div class="panel-page" id="layout"><!-- Page layout -->
 					<h2><span>Layout</span></h2>
 					<div class="block-section" id="grid"></div>
-					<div class="block-section" id="grid-block"></div>
+					<!-- <div class="block-section" id="grid-block"></div> -->
 					<div class="block-section" id="panel"></div>
-					<div class="block-section" id="off-canvas"></div>
+					<!-- <div class="block-section" id="off-canvas"></div> -->
 				</div>
 
-				<div class="block-section panel-page" id="ui"><!-- Page ui -->
+				<div class="panel-page" id="ui"><!-- Page ui -->
 					<h2><span>Interface utilisateur</span></h2>
-					<div class="block-section" id="nav"></div>
+					<!-- <div class="block-section" id="nav"></div> -->
 					<div class="block-section" id="boutons"></div>
-					<div class="block-section" id="tooltips"></div>
+					<!-- <div class="block-section" id="tooltips"></div> -->
 				</div>
 
-				<div class="block-section panel-page" id="forms"><!-- Page formulaires -->
+				<div class="panel-page" id="forms"><!-- Page formulaires -->
 					<h2><span>Les formulaires</span></h2>
 					<div class="block-section" id="form"></div>
 					<div class="block-section" id="alert-boxes"></div>
 				</div>
 
-				<div class="block-section panel-page" id="fx"><!-- Page fx -->
+				<div class="panel-page" id="fx"><!-- Page fx -->
 					<h2><span>Effets</span></h2>
 					<div class="block-section" id="masques"></div>
 				</div><!-- // Page fx -->
@@ -99,53 +99,43 @@
 			</section>
 		</div><!-- //.container -->
 
-		<div class="invisible" id="template">
+		<script type="text/html" id="template">
 			<div class="tabs" data-section>
 				<section class="tab">
 					<p class="title" data-section-title><a href="#panel1">Example</a></p>
-					<div class="content" data-section-content>
-						<p>Contenu panel 1</p>
-						<h1>Titre de niveau 1 &mdash; h1</h1>
-					</div>
+					<div class="content exemple" data-section-content>{{{example}}}</div>
 				</section>
 				<section class="tab">
 					<p class="title" data-section-title><a href="#panel2">Html</a></p>
-					<div class="content" data-section-content>
-						<p>Contenu panel 2</p>
-						<pre class="htmlCode">&lt;h1&gt;Titre de niveau 1 &mdash; h1&lt;/h1&gt;</pre>
+					<div class="content code" data-section-content>
+						<pre class="htmlCode">{{example}}</pre>
 					</div>
 				</section>
 			</div>
-		</div>
+		</script>
 		<script type="text/javascript">
 			var guiStructure = {
 				panelPage: [
 					{
-						id: 'charte',
-						title: 'Charte',
+						id: 'charte'
+						,title: 'Charte'
+						,hash: ''
+						,patterns: [
+							{id: 'color-swatches',title: 'Code couleur',hash: '',src: 'patterns/charte/color-swatches.html',loadContext: '.page-color-swatches'}
+							,{id: 'fonts',title: 'Polices',hash: '',src: 'patterns/charte/fonts.html',loadContext: '.page-fonts'}
+						]
+					},
+					{
+						id: 'typography',
+						title: 'Typography',
 						hash: '',
 						patterns: [
-							{
-								id: 'color-swatches', 
-								title: 'Code couleur', 
-								hash: '', 
-								src: 'patterns/charte/color-swatches.html', 
-								loadContext: '.page-color-swatches'
-							},
-							{
-								id: 'fonts', 
-								title: 'Polices', 
-								hash: '', 
-								src: 'patterns/charte/fonts.html', 
-								loadContext: '.page-fonts'
-							},
-							{
-								id: 'typography', 
-								title: 'Typography', 
-								hash: '', 
-								src: 'patterns/charte/typography.html', 
-								loadContext: '.page-typography'
-								}
+							{id: 'h1',title: 'H1',hash: '',src: 'patterns/typography/h1.html',loadContext: '.page-h1'}
+							,{id: 'h2',title: 'H2',hash: '',src: 'patterns/typography/h2.html',loadContext: '.page-h2'}
+							,{id: 'h3',title: 'H3',hash: '',src: 'patterns/typography/h3.html',loadContext: '.page-h3'}
+							,{id: 'h4',title: 'H4',hash: '',src: 'patterns/typography/h4.html',loadContext: '.page-h4'}
+							,{id: 'h5',title: 'H5',hash: '',src: 'patterns/typography/h5.html',loadContext: '.page-h5'}
+							,{id: 'h6',title: 'H6',hash: '',src: 'patterns/typography/h6.html',loadContext: '.page-h6'}
 						]
 					},
 					{
@@ -153,48 +143,12 @@
 						title: 'Layout',
 						hash: '',
 						patterns: [
-							{
-								id: 'layout-simple',
-								title: 'Layout simple', 
-								hash: '', 
-								src: '', 
-								loadContext: ''
-							},
-							{
-								id: 'off-canvas',
-								title: 'Off canvas', 
-								hash: '', 
-								src: '', 
-								loadContext: ''
-							},
-							{
-								id: 'grid',
-								title: 'Grille', 
-								hash: '', 
-								src: '', 
-								loadContext: ''
-							},
-							{
-								id: 'grid-block',
-								title: 'Bloc de Grille', 
-								hash: '', 
-								src: '', 
-								loadContext: ''
-							},
-							{
-								id: 'panel', 
-								title: 'Panels', 
-								hash: '', 
-								src: '', 
-								loadContext: ''
-							},
-							{
-								id: 'tabs', 
-								title: 'Tabs', 
-								hash: '', 
-								src: '', 
-								loadContext: ''
-							}
+							{id: 'layout-simple',title: 'Layout simple',hash: '',src: '',loadContext: ''},
+							{id: 'off-canvas',title: 'Off canvas', hash: '', src: '', loadContext: ''},
+							{id: 'grid',title: 'Grille', hash: '', src: '', loadContext: ''},
+							{id: 'grid-block',title: 'Bloc de Grille', hash: '', src: '', loadContext: ''},
+							{id: 'panel', title: 'Panels', hash: '', src: '', loadContext: ''},
+							{id: 'tabs', title: 'Tabs', hash: '', src: '', loadContext: ''}
 						]
 					},
 					{
@@ -202,56 +156,22 @@
 						title: 'Interface utilisateur',
 						hash: '',
 						patterns: [
-							{
-								id: 'Navigation', 
-								title: '', 
-								hash: '', 
-								src: '', 
-								loadContext: ''
-							},
-							{
-								id: 'Boutons', 
-								title: '', 
-								hash: '', 
-								src: '', 
-								loadContext: ''
-							},
-							{
-								id: 'Tooltips', 
-								title: '', 
-								hash: '', 
-								src: '', 
-								loadContext: ''
-							}
+							{id: 'Navigation', title: '', hash: '', src: '', loadContext: ''},
+							{id: 'Boutons', title: '', hash: '', src: '', loadContext: ''},
+							{id: 'Tooltips', title: '', hash: '', src: '', loadContext: ''}
 						]
 					},
 					{
 						id: 'forms',
 						title: 'Formulaires',
 						hash: '',
-						patterns: [
-							{
-								id: 'Alert box', 
-								title: '', 
-								hash: '', 
-								src: '', 
-								loadContext: ''
-							}
-						]
+						patterns: [{id: 'Alert box', title: '', hash: '', src: '', loadContext: ''}]
 					},
 					{
 						id: 'fx',
 						title: 'Effets',
 						hash: '',
-						patterns: [
-							{
-								id: 'Masque', 
-								title: '', 
-								hash: '', 
-								src: '', 
-								loadContext: ''
-							}
-						]
+						patterns: [{id: 'Masque', title: '', hash: '', src: '', loadContext: ''}]
 					}
 				]
 			};

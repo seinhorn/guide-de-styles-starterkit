@@ -16,6 +16,7 @@
 @import "../modules/grid-block";
 @import "../modules/panel";
 @import "../modules/nav";
+@import "../modules/tabs";
 @import "../modules/fx/masques/masques";
 @import "css/color-swatches";
 
@@ -33,6 +34,7 @@
 @include demo-typo();
 @include color-swatches();
 @include init-masques();
+@include tabs;
 
 @import "../modules/utils";
 
@@ -52,3 +54,7 @@
 }
 
 //@import "../debug";
+.block-section {
+	//background-color: #ffc;
+	margin: 1em;
+}
