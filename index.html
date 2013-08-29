@@ -14,9 +14,10 @@
 	<body data-tag-name="body" class="simple">
 		<div id="mdetect"></div>
 		<div class="container">
+
 			<header class="header">
 				<nav role="navigation" tabindex="0">
-					<a href="#menu">Menu</a>
+					<!-- <a href="#menu">Menu</a>
 					<ul id="menu">
 						<li>
 							<a href="" data-panelpage="charte">Charte</a>
@@ -25,6 +26,10 @@
 								<li><a href="">Polices</a></li>
 								<li><a href="">Typography</a></li>
 							</ul>
+						</li>
+						<li>
+							<a href="" data-panelpage="typography">Typography</a>
+
 						</li>
 						<li>
 							<a href="" data-panelpage="layout">Layout</a>
@@ -57,7 +62,7 @@
 								<li><a href="">Masque</a></li>
 							</ul>
 						</li>
-					</ul>
+					</ul> -->
 				</nav>
 			</header>
 
@@ -67,8 +72,12 @@
 					<h2><span>Charte graphique</span></h2>
 					<div class="block-section" id="color-swatches"></div>
 					<div class="block-section" id="fonts"></div>
-					<div class="block-section" id="typography"></div>
+
 				</div><!-- //#charte -->
+
+				<div class="panel-page" id="typography">
+					<h2><span>Typography</span></h2>
+				</div>
 
 				<div class="panel-page" id="layout"><!-- Page layout -->
 					<h2><span>Layout</span></h2>
@@ -99,7 +108,34 @@
 			</section>
 		</div><!-- //.container -->
 
-		<script type="text/html" id="template">
+		<script type="ext/x-handlebars-template" id="tpl-nav">
+			<a href="#menu">Menu</a>
+			{{#panelPage}}
+			<ul id="{{id}}-nav">
+				<li>
+					<a href="{{hash}}" data-panelpage="{{id}}">{{title}}</a>
+					{{#if patterns}}
+					<ul{{#if OuvertureSousMenu}}  data-dir="{{OuvertureSousMenu}}"{{/if}}>
+						{{#patterns}}
+						<li>
+							<a href="">{{title}}</a>
+							{{#if patterns}}
+							<ul{{#if OuvertureSousMenu}} data-dir="{{OuvertureSousMenu}}"{{/if}}>
+								{{#patterns}}
+								<li><a href="">{{title}}</a></li>
+								{{/patterns}}
+							</ul>
+							{{/if}}
+						</li>
+						{{/patterns}}
+					</ul>
+					{{/if}}
+				</li>
+			</ul>
+			{{/panelPage}}
+		</script>
+
+		<script type="ext/x-handlebars-template" id="tpl-tab">
 			<div class="tabs" data-section>
 				<section class="tab">
 					<p class="title" data-section-title><a href="#panel1">Example</a></p>
@@ -112,70 +148,6 @@
 					</div>
 				</section>
 			</div>
-		</script>
-		<script type="text/javascript">
-			var guiStructure = {
-				panelPage: [
-					{
-						id: 'charte'
-						,title: 'Charte'
-						,hash: ''
-						,patterns: [
-							{id: 'color-swatches',title: 'Code couleur',hash: '',src: 'patterns/charte/color-swatches.html',loadContext: '.page-color-swatches'}
-							,{id: 'fonts',title: 'Polices',hash: '',src: 'patterns/charte/fonts.html',loadContext: '.page-fonts'}
-						]
-					},
-					{
-						id: 'typography',
-						title: 'Typography',
-						hash: '',
-						patterns: [
-							{id: 'h1',title: 'H1',hash: '',src: 'patterns/typography/h1.html',loadContext: '.page-h1'}
-							,{id: 'h2',title: 'H2',hash: '',src: 'patterns/typography/h2.html',loadContext: '.page-h2'}
-							,{id: 'h3',title: 'H3',hash: '',src: 'patterns/typography/h3.html',loadContext: '.page-h3'}
-							,{id: 'h4',title: 'H4',hash: '',src: 'patterns/typography/h4.html',loadContext: '.page-h4'}
-							,{id: 'h5',title: 'H5',hash: '',src: 'patterns/typography/h5.html',loadContext: '.page-h5'}
-							,{id: 'h6',title: 'H6',hash: '',src: 'patterns/typography/h6.html',loadContext: '.page-h6'}
-						]
-					},
-					{
-						id: 'layout',
-						title: 'Layout',
-						hash: '',
-						patterns: [
-							{id: 'layout-simple',title: 'Layout simple',hash: '',src: '',loadContext: ''},
-							{id: 'off-canvas',title: 'Off canvas', hash: '', src: '', loadContext: ''},
-							{id: 'grid',title: 'Grille', hash: '', src: '', loadContext: ''},
-							{id: 'grid-block',title: 'Bloc de Grille', hash: '', src: '', loadContext: ''},
-							{id: 'panel', title: 'Panels', hash: '', src: '', loadContext: ''},
-							{id: 'tabs', title: 'Tabs', hash: '', src: '', loadContext: ''}
-						]
-					},
-					{
-						id: 'ui',
-						title: 'Interface utilisateur',
-						hash: '',
-						patterns: [
-							{id: 'Navigation', title: '', hash: '', src: '', loadContext: ''},
-							{id: 'Boutons', title: '', hash: '', src: '', loadContext: ''},
-							{id: 'Tooltips', title: '', hash: '', src: '', loadContext: ''}
-						]
-					},
-					{
-						id: 'forms',
-						title: 'Formulaires',
-						hash: '',
-						patterns: [{id: 'Alert box', title: '', hash: '', src: '', loadContext: ''}]
-					},
-					{
-						id: 'fx',
-						title: 'Effets',
-						hash: '',
-						patterns: [{id: 'Masque', title: '', hash: '', src: '', loadContext: ''}]
-					}
-				]
-			};
-			console.log(guiStructure);
 		</script>
 		<script type="text/javascript" data-main="js/main" src="js/vendor/require/2.1.8/require.js"></script>
 	</body>

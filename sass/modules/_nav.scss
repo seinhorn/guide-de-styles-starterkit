@@ -90,9 +90,18 @@
 		 				left: 0; top: -9999em;
 		 				z-index: 10;
 		 				li {
-		 					float: none;
-		 					a {
+							 float: none;
+							 a {
 								 white-space: nowrap;
+							}
+							 &:hover {
+								 & > ul {
+									 left: 10em;
+								 }
+							 }
+							 ul {
+								 left: -9999em; top: -10em;
+								 z-index: 20;
 							 }
 		 				}
 		 			}

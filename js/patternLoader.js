@@ -1,7 +1,7 @@
 /**
  * Module de chargement de pattern
  */
-define(['jquery','mustache'], function($,mustache){
+define(['jquery','handlebars'], function($,Handlebars){
 
 	$.fn.patternLoader = function (opts, myCcallback) {
 		// comment on valide que le type est objet
@@ -21,12 +21,13 @@ define(['jquery','mustache'], function($,mustache){
 			$.get(options.file, {}, function(data){
 				
 				var pattern = {};
-				var template = $('#template').html();
+				var template = $('#tpl-tab').html();
 				//console.log(template);
 				pattern.example = $(data).filter(options.loadContext).html();
-				console.log(pattern);
+
+				//console.log(pattern);
 				if (options.code) {
-					var output = mustache.render(template, pattern);
+					var output = Handlebars.compile(template, pattern);
 					$el.append(output)
 					.find("pre.htmlCode")
 					.snippet(

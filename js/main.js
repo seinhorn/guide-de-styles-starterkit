@@ -6,7 +6,7 @@ requirejs.config({
 		'jquery': 'vendor/jquery/1.8.3/jquery'
 		,'h5f': 'vendor/h5f/h5f.min'
 		,'snippet': 'vendor/snippet/jquery.snippet.min'
-		,'mustache': 'vendor/mustache/mustache'
+		,'handlebars': 'vendor/handlebars/1.0.0/handlebars'
 		,'foundation': 'vendor/foundation/foundation'
 		,'foundation.section': 'vendor/foundation/foundation.section'
 	},
@@ -18,27 +18,25 @@ requirejs.config({
 		,'affichePanelPage': { deps: ['jquery'] }
 		,'navigation': { deps: ['jquery'] }
 		,'alertBoxes': { deps: ['jquery'] }
-		//,'mustache': { 
-		//	deps: ['jquery']
-		//	,exports: 'mustache'
-		//}
-		//,'patternLoader': { deps: ['jquery','mustache'] }
+		, 'handlebars': {
+			exports: 'Handlebars'
+		}
 	}
 });
 
 require(
 	[
-		'snippet'
+		'handlebars'
+		,'snippet'
+		,'alertBoxes'
 		,'patternLoader'
 		,'jquery'
 		,'h5f'
 		,'affichePanelPage'
 		,'navigation'
-		,'alertBoxes'
-		,'mustache'
 		,'foundation'
 		,'foundation.section'
-	], function () {
+	], function () { //mustache
 
 		// permet de savoir quel media queries est utilise dans les css
 		var bodyViewportClasses = function() {
@@ -62,11 +60,11 @@ require(
 
 		bodyViewportClasses();
 
-		$('nav[role="navigation"]').affichePanelPage().navigation();
+		//$('nav[role="navigation"]').affichePanelPage().navigation();
 
 		// Charte ou intro a voir
 		$("#color-swatches").patternLoader({file:'patterns/charte/color-swatches.html', loadContext: '.page-color-swatches'});
-		$("#fonts").patternLoader({file:'patterns/charte/fonts.html', loadContext: '.page-fonts',code:true});
+		$("#fonts").patternLoader({file:'patterns/charte/fonts.html', loadContext: '.page-fonts'});
 		// Typography
 		$("#typography").patternLoader({file:'patterns/charte/typography.html', loadContext: '.page-typography',code:true});
 		// Layout
@@ -95,6 +93,115 @@ require(
 		$("pre.htmlCode").snippet("html",{style:"acid",transparent:true});
 
 		$(document).foundation();
+
+		var guiStructure = {
+			panelPage: [
+				{
+					id: 'charte'
+					,title: 'Charte'
+					,hash: ''
+					,patterns: [
+						{
+							id: 'color-swatches',
+							title: 'Code couleur',
+							hash: '',
+							src: 'patterns/charte/color-swatches.html',
+							loadContext: '.page-color-swatches'
+						}
+						,{
+							id: 'fonts',
+							title: 'Polices',
+							hash: '',
+							src: 'patterns/charte/fonts.html',
+							loadContext: '.page-fonts'
+						}
+					]
+				},
+				{
+					id: 'typography',
+					title: 'Typography',
+					hash: '',
+					patterns: [
+						{
+							id: 'titletypo'
+							,title:'Les titres'
+							,hash: ''
+							,OuvertureSousMenu: 'right'
+							,patterns: [
+								{id: 'h1',title: 'H1',hash: '',src: 'patterns/typography/h1.html',loadContext: '.page-h1'}
+								,{id: 'h2',title: 'H2',hash: '',src: 'patterns/typography/h2.html',loadContext: '.page-h2'}
+								,{id: 'h3',title: 'H3',hash: '',src: 'patterns/typography/h3.html',loadContext: '.page-h3'}
+								,{id: 'h4',title: 'H4',hash: '',src: 'patterns/typography/h4.html',loadContext: '.page-h4'}
+								,{id: 'h5',title: 'H5',hash: '',src: 'patterns/typography/h5.html',loadContext: '.page-h5'}
+								,{id: 'h6',title: 'H6',hash: '',src: 'patterns/typography/h6.html',loadContext: '.page-h6'}
+							]
+						},
+						{
+							id: 'listestypo'
+							,title: 'Les listes'
+							,hash: ''
+						},
+						{
+							id: 'citetypo'
+							,title: 'Citation'
+							,hash: ''
+						},
+						{
+							id: 'tabletypo'
+							,title: 'Tableaux'
+							,hash: ''
+						},
+						{
+							id: 'autretypo'
+							,title: 'Autres balises'
+							,hash: ''
+						}
+					]
+
+				},
+				{
+					id: 'layout',
+					title: 'Layout',
+					hash: '',
+					patterns: [
+						{id: 'layout-simple',title: 'Layout simple',hash: '',src: '',loadContext: ''},
+						{id: 'off-canvas',title: 'Off canvas', hash: '', src: '', loadContext: ''},
+						{id: 'grid',title: 'Grille', hash: '', src: '', loadContext: ''},
+						{id: 'grid-block',title: 'Bloc de Grille', hash: '', src: '', loadContext: ''},
+						{id: 'panel', title: 'Panels', hash: '', src: '', loadContext: ''},
+						{id: 'tabs', title: 'Tabs', hash: '', src: '', loadContext: ''}
+					]
+				},
+				{
+					id: 'ui',
+					title: 'Interface utilisateur',
+					hash: '',
+					patterns: [
+						{id: 'Navigation', title: '', hash: '', src: '', loadContext: ''},
+						{id: 'Boutons', title: '', hash: '', src: '', loadContext: ''},
+						{id: 'Tooltips', title: '', hash: '', src: '', loadContext: ''}
+					]
+				},
+				{
+					id: 'forms',
+					title: 'Formulaires',
+					hash: '',
+					patterns: [{id: 'Alert box', title: '', hash: '', src: '', loadContext: ''}]
+				},
+				{
+					id: 'fx',
+					title: 'Effets',
+					hash: '',
+					patterns: [{id: 'Masque', title: '', hash: '', src: '', loadContext: ''}]
+				}
+			]
+		};
+		console.log(guiStructure);
+
+		var tplNav = $('#tpl-nav').html();
+		var output = Handlebars.compile(tplNav);
+
+		$('nav[role="navigation"]').append(output(guiStructure)).affichePanelPage().navigation();
 
 	}
 );
