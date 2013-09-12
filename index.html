@@ -191,7 +191,15 @@
 
 			$("#color-swatches").loadPattern({file:'patterns/charte/color-swatches.html', loadContext: '.page-color-swatches'});
 			$("#fonts").loadPattern({file:'patterns/charte/fonts.html', loadContext: '.page-fonts'});
-			$("#typography").loadPattern({file:'patterns/charte/typography.html', loadContext: '.page-typography'});
+			$("#typography").loadPattern(
+					{
+						file:'patterns/charte/typography.html',
+						loadContext: '.page-typography'
+					}
+					,function(){
+						$(document).foundation();
+					}
+			);
 			$("#grid").loadPattern({file:'patterns/layout/grid.html', loadContext: '.page-grid'});
 			$("#grid-block").loadPattern({file:'patterns/layout/grid-block.html', loadContext: '.page-grid-block'});
 			$("#panel").loadPattern({file:'patterns/layout/panel.html', loadContext: '.page-panel'});
