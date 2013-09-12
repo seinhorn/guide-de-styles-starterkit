@@ -87,7 +87,8 @@
 	 				}
 		 			ul {
 		 				position: absolute;
-		 				left: 0; top: -9999em;
+		 				left: 0;
+						top: -9999em;
 		 				z-index: 10;
 		 				li {
 							 float: none;
@@ -96,11 +97,14 @@
 							}
 							 &:hover {
 								 & > ul {
-									 left: 10em;
+									 left: 9em;
+									 top: 0;
 								 }
 							 }
 							 ul {
-								 left: -9999em; top: -10em;
+								 position: absolute;
+								 left: -9999em;
+								 top: 0;
 								 z-index: 20;
 							 }
 		 				}

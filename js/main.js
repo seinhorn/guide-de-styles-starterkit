@@ -63,10 +63,27 @@ require(
 		//$('nav[role="navigation"]').affichePanelPage().navigation();
 
 		// Charte ou intro a voir
-		$("#color-swatches").patternLoader({file:'patterns/charte/color-swatches.html', loadContext: '.page-color-swatches'});
-		$("#fonts").patternLoader({file:'patterns/charte/fonts.html', loadContext: '.page-fonts'});
+		$("#color-swatches").patternLoader(
+			{
+				file:'patterns/charte/color-swatches.html',
+				loadContext: '.page-color-swatches'
+			});
+		$("#fonts").patternLoader(
+			{
+				file:'patterns/charte/fonts.html',
+				loadContext: '.page-fonts'
+			});
 		// Typography
-		$("#typography").patternLoader({file:'patterns/charte/typography.html', loadContext: '.page-typography',code:true});
+		$("#typography").patternLoader(
+			{
+				file:'patterns/charte/typography.html',
+				loadContext: '.page-typography',
+				code: true
+			},
+			function(){
+				$("pre.htmlCode").snippet("html",{style:"acid",transparent:true});
+			}
+		);
 		// Layout
 		$("#grid").patternLoader({file:'patterns/layout/grid.html', loadContext: '.page-grid',code:true});
 		$("#grid-block").patternLoader({file:'patterns/layout/grid-block.html', loadContext: '.page-grid-block',code:true});
@@ -160,10 +177,10 @@ require(
 
 				},
 				{
-					id: 'layout',
-					title: 'Layout',
-					hash: '',
-					patterns: [
+					id: 'layout'
+					,title: 'Layout'
+					,hash: ''
+					,patterns: [
 						{id: 'layout-simple',title: 'Layout simple',hash: '',src: '',loadContext: ''},
 						{id: 'off-canvas',title: 'Off canvas', hash: '', src: '', loadContext: ''},
 						{id: 'grid',title: 'Grille', hash: '', src: '', loadContext: ''},
@@ -173,30 +190,30 @@ require(
 					]
 				},
 				{
-					id: 'ui',
-					title: 'Interface utilisateur',
-					hash: '',
-					patterns: [
+					id: 'ui'
+					,title: 'Interface utilisateur'
+					,hash: ''
+					,patterns: [
 						{id: 'Navigation', title: '', hash: '', src: '', loadContext: ''},
 						{id: 'Boutons', title: '', hash: '', src: '', loadContext: ''},
 						{id: 'Tooltips', title: '', hash: '', src: '', loadContext: ''}
 					]
 				},
 				{
-					id: 'forms',
-					title: 'Formulaires',
-					hash: '',
-					patterns: [{id: 'Alert box', title: '', hash: '', src: '', loadContext: ''}]
+					id: 'forms'
+					,title: 'Formulaires'
+					,hash: ''
+					,patterns: [{id: 'Alert box', title: '', hash: '', src: '', loadContext: ''}]
 				},
 				{
-					id: 'fx',
-					title: 'Effets',
-					hash: '',
-					patterns: [{id: 'Masque', title: '', hash: '', src: '', loadContext: ''}]
+					id: 'fx'
+					,title: 'Effets'
+					,hash: ''
+					,patterns: [{id: 'Masque', title: '', hash: '', src: '', loadContext: ''}]
 				}
 			]
 		};
-		console.log(guiStructure);
+		//console.log(guiStructure);
 
 		var tplNav = $('#tpl-nav').html();
 		var output = Handlebars.compile(tplNav);

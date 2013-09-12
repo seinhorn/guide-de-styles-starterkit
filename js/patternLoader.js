@@ -20,25 +20,31 @@ define(['jquery','handlebars'], function($,Handlebars){
 			
 			$.get(options.file, {}, function(data){
 				
-				var pattern = {};
+				var pattern = {
+					example : $(data).filter(options.loadContext).html()
+				};
 				var template = $('#tpl-tab').html();
-				//console.log(template);
-				pattern.example = $(data).filter(options.loadContext).html();
+				console.log(template);
 
-				//console.log(pattern);
+
+				//console.log(pattern.exemple);
 				if (options.code) {
-					var output = Handlebars.compile(template, pattern);
-					$el.append(output)
-					.find("pre.htmlCode")
-					.snippet(
-						"html",
-						{
-							style:"acid",
-							transparent:true
-						}
-					);
+					var output = Handlebars.compile(template);
+					var output2 = output(pattern);
+					//console.log(pattern.example);
+
+
+					$el.append(output2)
+					//.find("pre.htmlCode")
+					//.snippet(
+					//	"html"
+					//	//, {style:"acid",transparent:true}
+					//)
+					;
+					//console.log(pattern);
 				} else {
 					$el.append(pattern.example);
+					//console.log(pattern);
 				}
 				
 				
