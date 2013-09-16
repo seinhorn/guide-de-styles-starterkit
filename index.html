@@ -100,8 +100,8 @@
 		</div><!-- //.container -->
 		<script type="text/javascript" src="js/vendor/jquery/1.8.3/jquery.js"></script>
 		<script type="text/javascript" src="js/vendor/jquery-ui/1.9.2/jquery-ui-1.9.2.custom.js"></script>
-		<script type="text/javascript" src="js/foundation.js"></script>
-		<script type="text/javascript" src="js/foundation.section.js"></script>
+		<!--<script type="text/javascript" src="js/foundation.js"></script>-->
+		<!--<script type="text/javascript" src="js/foundation.section.js"></script>-->
 		<script type="text/javascript" src="js/vendor/snippet/jquery.snippet.min.js"></script>
 		<script type="text/javascript" src="js/vendor/h5f/h5f.min.js"></script>
 		<script type="text/javascript" src="js/vendor/modernizr/2.6.2/modernizr.custom.js"></script>
@@ -197,13 +197,22 @@
 						loadContext: '.page-typography'
 					}
 					,function(){
-						$(document).foundation();
+						$('.tabs').tabs();
 					}
 			);
-			$("#grid").loadPattern({file:'patterns/layout/grid.html', loadContext: '.page-grid'});
-			$("#grid-block").loadPattern({file:'patterns/layout/grid-block.html', loadContext: '.page-grid-block'});
-			$("#panel").loadPattern({file:'patterns/layout/panel.html', loadContext: '.page-panel'});
-			$("#off-canvas").loadPattern({file:'patterns/layout/off-canvas.html', loadContext: '.page-off-canvas'});
+			$("#grid").loadPattern(
+					{
+						file:'patterns/layout/grid.html',
+						loadContext: '.page-grid'
+					}
+					,function(){
+						$('.tabs').tabs();
+					}
+
+			);
+			//$("#grid-block").loadPattern({file:'patterns/layout/grid-block.html', loadContext: '.page-grid-block'});
+			//$("#panel").loadPattern({file:'patterns/layout/panel.html', loadContext: '.page-panel'});
+			//$("#off-canvas").loadPattern({file:'patterns/layout/off-canvas.html', loadContext: '.page-off-canvas'});
 			$("#boutons").loadPattern({file:'patterns/ui/boutons.html', loadContext: '.page-boutons'});
 			$("#tooltips").loadPattern({file:'patterns/ui/tooltips.html', loadContext: '.page-tooltips'});
 			$("#nav").loadPattern({file:'patterns/ui/nav.html', loadContext: '.page-nav'});
@@ -217,11 +226,9 @@
 						$.alertBoxes();
 					}
 			);
-			$("#masques").loadPattern({file:'patterns/fx/masques.html', loadContext: '.masque'});
+			$("#masques").loadPattern({file:'patterns/fx/masques.html',loadContext: '.masque'});
 
 			$("pre.htmlCode").snippet("html",{style:"acid",transparent:true});
-
-			$(document).foundation();
 
 		})(jQuery);
 		</script>
