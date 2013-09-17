@@ -4,7 +4,7 @@
 <!--[if IE 7]> <html class="no-js ie7" lang="fr"><![endif]-->
 <!--[if gt IE 9]><!--><html class="no-js" lang="fr"><!--<![endif]-->
 	<head>
-		<meta charset="ISO-8859-15" />
+		<meta charset="utf-8" />
 		<title>Guide de styles</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 		<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
@@ -19,44 +19,44 @@
 					<a href="#menu">Menu</a>
 					<ul id="menu">
 						<li>
-							<a href="" data-panelpage="charte">Charte</a>
+							<a href="#charte" data-panelpage="charte">Charte</a>
 							<ul>
-								<li><a href="">Code couleur</a></li>
-								<li><a href="">Polices</a></li>
-								<li><a href="">Typography</a></li>
+								<li><a href="#color-swatches">Code couleur</a></li>
+								<li><a href="#fonts">Polices</a></li>
+								<li><a href="#typography">Typography</a></li>
 							</ul>
 						</li>
 						<li>
 							<a href="" data-panelpage="layout">Layout</a>
 							<ul>
-								<li><a href="">Layout simple</a></li>
-								<li><a href="">Off canvas</a></li>
 								<li><a href="">Grille</a></li>
-								<li><a href="">Bloc de Grille</a></li>
-								<li><a href="">Panels</a></li>
-								<li><a href="">Tabs</a></li>
+								<!--<li><a href="">Layout simple</a></li>-->
+								<!--<li><a href="">Off canvas</a></li>-->
+								<!--<li><a href="">Bloc de Grille</a></li>-->
+								<!--<li><a href="">Panels</a></li>-->
+								<!--<li><a href="">Tabs</a></li>-->
 							</ul>
 						</li>
 						<li>
-							<a href="" data-panelpage="ui">UI</a>
+							<a href="#grid" data-panelpage="ui">UI</a>
 							<ul>
-								<li><a href="">Navigation</a></li>
 								<li><a href="">Boutons</a></li>
-								<li><a href="">Tooltips</a></li>
+								<!--<li><a href="">Navigation</a></li>-->
+								<!--<li><a href="">Tooltips</a></li>-->
 							</ul>
 						</li>
-						<li>
-							<a href="" data-panelpage="forms">Formulaires</a>
-							<ul>
-								<li><a href="">Alert box</a></li>
-							</ul>
-						</li>
-						<li>
-							<a href="" data-panelpage="fx">Effets</a>
-							<ul>
-								<li><a href="">Masque</a></li>
-							</ul>
-						</li>
+						<!--<li>-->
+							<!--<a href="" data-panelpage="forms">Formulaires</a>-->
+							<!--<ul>-->
+								<!--<li><a href="">Alert box</a></li>-->
+							<!--</ul>-->
+						<!--</li>-->
+						<!--<li>-->
+							<!--<a href="" data-panelpage="fx">Effets</a>-->
+							<!--<ul>-->
+								<!--<li><a href="">Masque</a></li>-->
+							<!--</ul>-->
+						<!--</li>-->
 					</ul>
 				</nav>
 			</header>
@@ -73,28 +73,28 @@
 				<div class="block-section panel-page" id="layout"><!-- Page layout -->
 					<h2><span>Layout</span></h2>
 					<div class="block-section" id="grid"></div>
-					<div class="block-section" id="grid-block"></div>
-					<div class="block-section" id="panel"></div>
-					<div class="block-section" id="off-canvas"></div>
+					<!--<div class="block-section" id="grid-block"></div>-->
+					<!--<div class="block-section" id="panel"></div>-->
+					<!--<div class="block-section" id="off-canvas"></div>-->
 				</div>
 
 				<div class="block-section panel-page" id="ui"><!-- Page ui -->
 					<h2><span>Interface utilisateur</span></h2>
-					<div class="block-section" id="nav"></div>
 					<div class="block-section" id="boutons"></div>
-					<div class="block-section" id="tooltips"></div>
+					<!--<div class="block-section" id="nav"></div>-->
+					<!--<div class="block-section" id="tooltips"></div>-->
 				</div>
 
-				<div class="block-section panel-page" id="forms"><!-- Page formulaires -->
-					<h2><span>Les formulaires</span></h2>
-					<div class="block-section" id="form"></div>
-					<div class="block-section" id="alert-boxes"></div>
-				</div>
+				<!--<div class="block-section panel-page" id="forms">&lt;!&ndash; Page formulaires &ndash;&gt;-->
+					<!--<h2><span>Les formulaires</span></h2>-->
+					<!--<div class="block-section" id="form"></div>-->
+					<!--<div class="block-section" id="alert-boxes"></div>-->
+				<!--</div>-->
 
-				<div class="block-section panel-page" id="fx"><!-- Page fx -->
-					<h2><span>Effets</span></h2>
-					<div class="block-section" id="masques"></div>
-				</div><!-- // Page fx -->
+				<!--<div class="block-section panel-page" id="fx">&lt;!&ndash; Page fx &ndash;&gt;-->
+					<!--<h2><span>Effets</span></h2>-->
+					<!--<div class="block-section" id="masques"></div>-->
+				<!--</div>&lt;!&ndash; // Page fx &ndash;&gt;-->
 
 			</section>
 		</div><!-- //.container -->
@@ -213,11 +213,19 @@
 			//$("#grid-block").loadPattern({file:'patterns/layout/grid-block.html', loadContext: '.page-grid-block'});
 			//$("#panel").loadPattern({file:'patterns/layout/panel.html', loadContext: '.page-panel'});
 			//$("#off-canvas").loadPattern({file:'patterns/layout/off-canvas.html', loadContext: '.page-off-canvas'});
-			$("#boutons").loadPattern({file:'patterns/ui/boutons.html', loadContext: '.page-boutons'});
-			$("#tooltips").loadPattern({file:'patterns/ui/tooltips.html', loadContext: '.page-tooltips'});
-			$("#nav").loadPattern({file:'patterns/ui/nav.html', loadContext: '.page-nav'});
-			$("#form").loadPattern({file:'patterns/forms/forms.html', loadContext: '.page-form'});
-			$("#alert-boxes").loadPattern(
+			$("#boutons").loadPattern(
+					{
+						file:'patterns/ui/boutons.html',
+						loadContext: '.page-boutons'
+					}
+					,function(){
+						$('.tabs').tabs();
+					}
+			);
+//			$("#tooltips").loadPattern({file:'patterns/ui/tooltips.html', loadContext: '.page-tooltips'});
+//			$("#nav").loadPattern({file:'patterns/ui/nav.html', loadContext: '.page-nav'});
+//			$("#form").loadPattern({file:'patterns/forms/forms.html', loadContext: '.page-form'});
+			/*$("#alert-boxes").loadPattern(
 					{
 						file:'patterns/forms/alert-boxes.html',
 						loadContext: '.page-alert-boxes'
@@ -225,8 +233,8 @@
 					function(){
 						$.alertBoxes();
 					}
-			);
-			$("#masques").loadPattern({file:'patterns/fx/masques.html',loadContext: '.masque'});
+			);*/
+//			$("#masques").loadPattern({file:'patterns/fx/masques.html',loadContext: '.masque'});
 
 			$("pre.htmlCode").snippet("html",{style:"acid",transparent:true});
 

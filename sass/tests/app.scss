@@ -1,4 +1,4 @@
-@charset "ISO-8859-15";
+@charset "utf-8";
 // ==   Feuille de style genere pour le guide de style
 // ========================================================================== //
 @import "compass";
@@ -53,4 +53,10 @@
 	#mdetect { display: none; }
 }
 
+body {
+	margin: 0 auto;
+}
+@include respondTo(moresmallscreen) {
+	body { width: 95%; }
+}
 //@import "../debug";
