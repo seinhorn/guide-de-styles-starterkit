@@ -1,8 +1,5 @@
 /**
- * Created with IntelliJ IDEA.
- * Date: 13/05/13
- * Time: 12:28
- * To change this template use File | Settings | File Templates.
+ * Module de chargement de patterns
  */
 ;(function($){
 	$.fn.loadPattern = function (opts, myCcallback) {

@@ -30,10 +30,7 @@
 							<a href="" data-panelpage="layout">Layout</a>
 							<ul>
 								<li><a href="">Grille</a></li>
-								<!--<li><a href="">Layout simple</a></li>-->
-								<!--<li><a href="">Off canvas</a></li>-->
-								<!--<li><a href="">Bloc de Grille</a></li>-->
-								<!--<li><a href="">Panels</a></li>-->
+								<li><a href="">Panel</a></li>
 								<!--<li><a href="">Tabs</a></li>-->
 							</ul>
 						</li>
@@ -45,12 +42,12 @@
 								<!--<li><a href="">Tooltips</a></li>-->
 							</ul>
 						</li>
-						<!--<li>-->
-							<!--<a href="" data-panelpage="forms">Formulaires</a>-->
-							<!--<ul>-->
-								<!--<li><a href="">Alert box</a></li>-->
-							<!--</ul>-->
-						<!--</li>-->
+						<li>
+							<a href="" data-panelpage="forms">Formulaires</a>
+							<ul>
+								<li><a href="">Alert box</a></li>
+							</ul>
+						</li>
 						<!--<li>-->
 							<!--<a href="" data-panelpage="fx">Effets</a>-->
 							<!--<ul>-->
@@ -73,9 +70,7 @@
 				<div class="block-section panel-page" id="layout"><!-- Page layout -->
 					<h2><span>Layout</span></h2>
 					<div class="block-section" id="grid"></div>
-					<!--<div class="block-section" id="grid-block"></div>-->
-					<!--<div class="block-section" id="panel"></div>-->
-					<!--<div class="block-section" id="off-canvas"></div>-->
+					<div class="block-section" id="panel"></div>
 				</div>
 
 				<div class="block-section panel-page" id="ui"><!-- Page ui -->
@@ -85,11 +80,11 @@
 					<!--<div class="block-section" id="tooltips"></div>-->
 				</div>
 
-				<!--<div class="block-section panel-page" id="forms">&lt;!&ndash; Page formulaires &ndash;&gt;-->
-					<!--<h2><span>Les formulaires</span></h2>-->
-					<!--<div class="block-section" id="form"></div>-->
-					<!--<div class="block-section" id="alert-boxes"></div>-->
-				<!--</div>-->
+				<div class="block-section panel-page" id="forms"><!-- Page formulaires -->
+					<h2><span>Les formulaires</span></h2>
+					<div class="block-section" id="form"></div>
+					<div class="block-section" id="alert-boxes"></div>
+				</div>
 
 				<!--<div class="block-section panel-page" id="fx">&lt;!&ndash; Page fx &ndash;&gt;-->
 					<!--<h2><span>Effets</span></h2>-->
@@ -100,8 +95,6 @@
 		</div><!-- //.container -->
 		<script type="text/javascript" src="js/vendor/jquery/1.8.3/jquery.js"></script>
 		<script type="text/javascript" src="js/vendor/jquery-ui/1.9.2/jquery-ui-1.9.2.custom.js"></script>
-		<!--<script type="text/javascript" src="js/foundation.js"></script>-->
-		<!--<script type="text/javascript" src="js/foundation.section.js"></script>-->
 		<script type="text/javascript" src="js/vendor/snippet/jquery.snippet.min.js"></script>
 		<script type="text/javascript" src="js/vendor/h5f/h5f.min.js"></script>
 		<script type="text/javascript" src="js/vendor/modernizr/2.6.2/modernizr.custom.js"></script>
@@ -111,6 +104,7 @@
 		<script type="text/javascript">
 		(function($){
 
+			// Fonction de check de responsive
 			var bodyViewportClasses = function() {
 				var nav_display = $('#mdetect').css('display');
 
@@ -122,21 +116,20 @@
 				}
 			}
 
-
-			// add/remove classes everytime the window resize event fires
+			// Idem sur le resize
 			$(window).resize(function(){
 				bodyViewportClasses();
 			});
 
 			bodyViewportClasses();
 
+			// Affichage sous forme de page en respectant les items de la barre de navigation
 			$.fn.affichePanelPage = function() {
 
 				return this.each(function(){
 
 					$(this).find('a[data-panelpage]').click(function(event){
 						var loc = $(this).attr('href');
-						//console.log(loc.substring(1,loc.length));
 						event.preventDefault();
 						$('.panel-page').hide();
 						$('#'+$(this).attr('data-panelpage')).show();
@@ -149,13 +142,13 @@
 					});
 				});
 			};
-
+			// Fonctionnement de la barre de navigation
 			$.fn.navigation = function() {
 
 				return this.each(function() {
 
 					var smallScreen = $('.small-screen');
-
+					// Si on est sur mobile
 					if(smallScreen.length > 0){
 
 						$(this).children('a')
@@ -188,7 +181,6 @@
 				});
 			};
 
-
 			$("#color-swatches").loadPattern({file:'patterns/charte/color-swatches.html', loadContext: '.page-color-swatches'});
 			$("#fonts").loadPattern({file:'patterns/charte/fonts.html', loadContext: '.page-fonts'});
 			$("#typography").loadPattern(
@@ -208,11 +200,16 @@
 					,function(){
 						$('.tabs').tabs();
 					}
-
 			);
-			//$("#grid-block").loadPattern({file:'patterns/layout/grid-block.html', loadContext: '.page-grid-block'});
-			//$("#panel").loadPattern({file:'patterns/layout/panel.html', loadContext: '.page-panel'});
-			//$("#off-canvas").loadPattern({file:'patterns/layout/off-canvas.html', loadContext: '.page-off-canvas'});
+			$("#panel").loadPattern(
+					{
+						file:'patterns/layout/panel.html',
+						loadContext: '.page-panel'
+					}
+					,function(){
+						$('.tabs').tabs();
+					}
+			);
 			$("#boutons").loadPattern(
 					{
 						file:'patterns/ui/boutons.html',
@@ -222,10 +219,16 @@
 						$('.tabs').tabs();
 					}
 			);
-//			$("#tooltips").loadPattern({file:'patterns/ui/tooltips.html', loadContext: '.page-tooltips'});
-//			$("#nav").loadPattern({file:'patterns/ui/nav.html', loadContext: '.page-nav'});
-//			$("#form").loadPattern({file:'patterns/forms/forms.html', loadContext: '.page-form'});
-			/*$("#alert-boxes").loadPattern(
+			$("#form").loadPattern(
+					{
+						file:'patterns/forms/forms.html',
+						loadContext: '.page-form'
+					}
+					,function(){
+						$('.tabs').tabs();
+					}
+			);
+			$("#alert-boxes").loadPattern(
 					{
 						file:'patterns/forms/alert-boxes.html',
 						loadContext: '.page-alert-boxes'
@@ -233,8 +236,7 @@
 					function(){
 						$.alertBoxes();
 					}
-			);*/
-//			$("#masques").loadPattern({file:'patterns/fx/masques.html',loadContext: '.masque'});
+			);
 
 			$("pre.htmlCode").snippet("html",{style:"acid",transparent:true});
 

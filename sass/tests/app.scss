@@ -13,7 +13,6 @@
 @import "../modules/forms/forms";
 @import "../modules/alert-boxes";
 @import "../modules/grid";
-@import "../modules/grid-block";
 @import "../modules/panel";
 @import "../modules/tabs";
 @import "../modules/nav";
@@ -24,7 +23,6 @@
 @include init-global-fonts();
 @include init-typo();
 @include init-grid();
-@include grid-block();
 @include init-panel();
 @include action-buttons();
 @include default-form();
