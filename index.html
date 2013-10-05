@@ -4,7 +4,7 @@
 <!--[if IE 7]> <html class="no-js ie7" lang="fr"><![endif]-->
 <!--[if gt IE 9]><!--><html class="no-js" lang="fr"><!--<![endif]-->
 	<head>
-		<meta charset="ISO-8859-15" />
+		<meta charset="utf-8" />
 		<title>Guide de styles</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 		<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
@@ -19,7 +19,7 @@
 				<nav role="navigation" tabindex="0"></nav>
 			</header>
 
-			<section role="main" class="section">
+			<section role="main">
 				
 				<div class="panel-page default" id="charte"><!-- Page charte -->
 					<h2><span>Charte graphique</span></h2>
@@ -45,6 +45,8 @@
 					<!-- <div class="block-section" id="nav"></div> -->
 					<div class="block-section" id="boutons"></div>
 					<!-- <div class="block-section" id="tooltips"></div> -->
+					<!--<div class="block-section" id="nav"></div>-->
+					<!--<div class="block-section" id="tooltips"></div>-->
 				</div>
 
 				<div class="panel-page" id="forms"><!-- Page formulaires -->
@@ -53,14 +55,13 @@
 					<div class="block-section" id="alert-boxes"></div>
 				</div>
 
-				<div class="panel-page" id="fx"><!-- Page fx -->
-					<h2><span>Effets</span></h2>
-					<div class="block-section" id="masques"></div>
-				</div><!-- // Page fx -->
+				<!--<div class="block-section panel-page" id="fx">&lt;!&ndash; Page fx &ndash;&gt;-->
+					<!--<h2><span>Effets</span></h2>-->
+					<!--<div class="block-section" id="masques"></div>-->
+				<!--</div>&lt;!&ndash; // Page fx &ndash;&gt;-->
 
 			</section>
 		</div><!-- //.container -->
-
 		<script type="ext/x-handlebars-template" id="tpl-nav">
 			<a href="#menu">Menu</a>
 			{{#panelPage}}
@@ -88,20 +89,6 @@
 			{{/panelPage}}
 		</script>
 
-		<script type="ext/x-handlebars-template" id="tpl-tab">
-			<div class="tabs" data-section>
-				<section class="tab">
-					<p class="title" data-section-title><a href="#panel1">Example</a></p>
-					<div class="content exemple" data-section-content>{{{example}}}</div>
-				</section>
-				<section class="tab">
-					<p class="title" data-section-title><a href="#panel2">Html</a></p>
-					<div class="content code" data-section-content>
-						<pre class="htmlCode">{{example}}</pre>
-					</div>
-				</section>
-			</div>
-		</script>
 		<script type="text/javascript" data-main="js/main" src="js/vendor/require/2.1.8/require.js"></script>
 	</body>
 </html>

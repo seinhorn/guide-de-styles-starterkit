@@ -68,14 +68,11 @@ $global-line-height: 		1.5em !default;
 			weight: normal;
 		}
 		color:$title-n2-color;
-		background-color: $title-n2-bgcolor;
 		span, a {
 			display:inline-block;
 			padding:0  1.1em 0 0;
 			text-decoration: none;
-			background: $white;
 			color: inherit;
-			.cadremploitv & { background-color: transparent; }
 		}
 	}
 }

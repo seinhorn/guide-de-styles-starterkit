@@ -1,29 +1,23 @@
-@charset "ISO-8859-15";
+@charset "UTF-8";
 
 $panel-padding: 0.5em 1.2em !default;
 $panel-margin: 1em 0 !default;
 
 @mixin corps-panel() {
-	padding: $panel-padding;
-	margin: $panel-margin;
+
 }
 
 @mixin panel() {
 	.panel {
-		@include corps-panel;
-	}
-}
-
-@mixin panel-form() {
-	.panel-form {
-		@include corps-panel;
-		// See : utils
-		@extend .third-bg-light-ultra;
+		padding: $panel-padding;
+		margin: $panel-margin;
+		&.form {
+			@extend .third-bg-light-ultra;
+		}
 	}
 }
 
 @mixin init-panel() {
 	@include panel();
-	@include panel-form();
 }
 	

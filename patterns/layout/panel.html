@@ -5,22 +5,32 @@
 <!--[if IE 9]><html lang="fr" class="no-js lt-ie10 ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html lang="fr" class="no-js"> <!--<![endif]-->
-<head>
-	<meta charset="iso-8859-15">
-	<link rel="stylesheet" href="../../css/tests/css/panel.css">
-	<title></title>
-</head>
-<body>
-<div class="page-panel">
-	<h4>Panel par d&eacute;faut</h4>
-	<div class="panel">
-		Contenu du panel
-		<!--Creation de block de contenu avec des proprietes predefinies-->
-	</div>
-	<h4>Panel pour les formulaires</h4>
-	<div class="panel-form">
-		<p>Contenu du panel</p>
-	</div>
-</div>
-</body>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../../css/tests/css/panel.css">
+		<title></title>
+	</head>
+	<body>
+		<div class="page-panel">
+			<h4>Panel par d&eacute;faut</h4>
+			<section class="tabs">
+				<ul>
+					<li><a href="#panel1">Example</a></li>
+					<li><a href="#panel2">Html</a></li>
+				</ul>
+				<div class="tab" id="panel1">
+					<div class="panel">
+						Contenu du panel
+					</div>
+					<h4>Panel pour les formulaires</h4>
+					<div class="panel form">
+						<p>Contenu du panel</p>
+					</div>
+				</div>
+				<div class="tab" id="panel2">
+					<pre class="htmlCode">&lt;div class="panel"&gt;Contenu du panel&lt;/div&gt;<br>&lt;div class="panel form"&gt;Contenu du panel&lt;/div&gt;</pre>
+				</div>
+			</section>
+		</div>
+	</body>
 </html>

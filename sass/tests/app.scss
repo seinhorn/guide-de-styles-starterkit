@@ -1,4 +1,4 @@
-@charset "ISO-8859-15";
+@charset "utf-8";
 // ==   Feuille de style genere pour le guide de style
 // ========================================================================== //
 @import "compass";
@@ -13,8 +13,8 @@
 @import "../modules/forms/forms";
 @import "../modules/alert-boxes";
 @import "../modules/grid";
-@import "../modules/grid-block";
 @import "../modules/panel";
+@import "../modules/tabs";
 @import "../modules/nav";
 @import "../modules/tabs";
 @import "../modules/fx/masques/masques";
@@ -53,8 +53,10 @@
 	#mdetect { display: none; }
 }
 
-//@import "../debug";
-.block-section {
-	//background-color: #ffc;
-	margin: 1em;
+body {
+	margin: 0 auto;
 }
+@include respondTo(moresmallscreen) {
+	body { width: 95%; }
+}
+//@import "../debug";

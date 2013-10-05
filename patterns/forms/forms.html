@@ -3,226 +3,222 @@
 <!--[if IE 8]> <html class="no-js ie8" lang="fr"><![endif]-->
 <!--[if IE 7]> <html class="no-js ie7" lang="fr"><![endif]-->
 <!--[if gt IE 9]><!--><html class="no-js" lang="fr"><!--<![endif]-->
-<head>
-	<meta charset="iso-8859-15"/>
-	<meta name="viewport" content="width=device-width" />
-	<title>Formulaires</title>
-	<link rel="stylesheet" href="../../css/tests/css/forms.css">
-</head>
-<body>
-<div class="container page-form">
-	<h2><span>Titre de mon formulaire</span></h2>
-	<form name="formulaire" id="formulaire" action="" method="post">
-		<fieldset id="infoPersos" class="block-form">
-			<legend class="invisible">Pas encore inscrit ? Cr&eacute;ez un compte en remplissant le formulaire suivant.</legend>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width" />
+		<title>Formulaires</title>
+		<link rel="stylesheet" href="../../css/tests/css/forms.css">
+	</head>
+	<body>
+	<div class="container page-form">
+		<form name="formulaire" id="formulaire" action="" method="post">
+			<fieldset id="infoPeutfrsos" class="panel form">
+				<legend class="invisible">Pas encore inscrit ? Cr&eacute;ez un compte en remplissant le formulaire suivant.</legend>
+				<h3>Titre de bloc</h3>
+				<p class="legende-champ">Les rubriques indiqu&eacute;es par <span class="asterik">*</span> sont obligatoires.</p>
+				<div class="row">
+					<div class="two columns">
+						<label for="civilite">Liste de choix</label>
+					</div>
+					<div class="six columns">
+						<select name="civilite" id="civilite" tabindex="1" required>
+							<option value="3">Mademoiselle</option>
+							<option value="2">Madame</option>
+							<option value="1">Monsieur</option>
+						</select>
+					</div>
+					<div class="four columns"></div>
+				</div>
 
-			<h3>Titre de bloc</h3>
+				<div class="row">
+					<div class="two columns">
+						<label for="nom">Nom</label>
+					</div>
+					<div class="six columns">
+						<input type="text" name="nom" id="nom" value="" class="requis focus" placeholder="Nom" tabindex="2" required/>
+					</div>
+					<div class="four columns">
+						<span class="infoPlus">Champs de type text</span>
+						<span class="alert"></span>
+					</div>
+				</div>
 
-			<p class="legende-champ">Les rubriques indiqu&eacute;es par <span class="asterik">*</span> sont obligatoires.</p>
+				<div class="row">
+					<div class="two columns">
+						<label for="emailInscription">Votre email</label>
+					</div>
+					<div class="six columns">
+						<input type="email" name="emailInscription" id="emailInscription" value="" placeholder="Votre E-mail" class="requis focus" tabindex="4" required/>
+					</div>
+					<div class="four columns">
+						<span class="infoPlus">Votre email vous servira &agrave; vous identifier sur le site.</span>
+						<span class="alert"></span>
+					</div>
+				</div>
 
-			<div class="row">
-				<div class="two columns">
-					<label for="civilite">Liste de choix</label>
+				<div class="row">
+					<div class="two columns">
+						<label for="passwordInscription">Mot de passe</label>
+					</div>
+					<div class="six columns">
+						<input type="password" name="passwordInscription" id="passwordInscription" placeholder="Votre mot de passe" class="requis focus" tabindex="5" required/>
+					</div>
+					<div class="four columns">
+						<span class="infoPlus">(au moins 5 caract&egrave;res)</span>
+						<span class="alert"></span>
+					</div>
 				</div>
-				<div class="six columns">
-					<select name="civilite" id="civilite" tabindex="1" required>
-						<option value="3">Mademoiselle</option>
-						<option value="2">Madame</option>
-						<option value="1">Monsieur</option>
-					</select>
-				</div>
-				<div class="four columns"></div>
-			</div>
 
-			<div class="row">
-				<div class="two columns">
-					<label for="nom">Nom</label>
+				<div class="row">
+					<div class="two columns">
+						<label for="passwordInscriptionConfirm">Confirmation</label>
+					</div>
+					<div class="six columns">
+						<input type="password" name="passwordInscriptionConfirm" id="passwordInscriptionConfirm" placeholder="Confirmez votre mot de passe" class="requis focus" tabindex="6" required/>
+					</div>
+					<div class="four columns">
+						<span class="infoPlus"></span>
+						<span class="alert"></span>
+					</div>
 				</div>
-				<div class="six columns">
-					<input type="text" name="nom" id="nom" value="" class="requis focus" placeholder="Nom" tabindex="2" required/>
-				</div>
-				<div class="four columns">
-					<span class="infoPlus">Champs de type text</span>
-					<span class="alert"></span>
-				</div>
-			</div>
 
-			<div class="row">
-				<div class="two columns">
-					<label for="emailInscription">Votre email</label>
+				<div class="row">
+					<div class="two columns">
+						<label for="url">Url</label>
+					</div>
+					<div class="six columns">
+						<input type="url" name="url" id="url" placeholder="http://Adresse de votre site" class="requis focus" tabindex="6" required/>
+					</div>
+					<div class="four columns">
+						<span class="infoPlus"></span>
+						<span class="alert"></span>
+					</div>
 				</div>
-				<div class="six columns">
-					<input type="email" name="emailInscription" id="emailInscription" value="" placeholder="Votre E-mail" class="requis focus" tabindex="4" required/>
-				</div>
-				<div class="four columns">
-					<span class="infoPlus">Votre email vous servira &agrave; vous identifier sur le site.</span>
-					<span class="alert"></span>
-				</div>
-			</div>
 
-			<div class="row">
-				<div class="two columns">
-					<label for="passwordInscription">Mot de passe</label>
+				<div class="row">
+					<div class="two columns">
+						<label for="tel">Telephone</label>
+					</div>
+					<div class="six columns">
+						<input type="tel" name="tel" id="tel" placeholder="T&eacute;l&eacute;phone" class="requis focus" tabindex="6" required/>
+					</div>
+					<div class="four columns">
+						<span class="infoPlus"></span>
+						<span class="alert"></span>
+					</div>
 				</div>
-				<div class="six columns">
-					<input type="password" name="passwordInscription" id="passwordInscription" placeholder="Votre mot de passe" class="requis focus" tabindex="5" required/>
-				</div>
-				<div class="four columns">
-					<span class="infoPlus">(au moins 5 caract&egrave;res)</span>
-					<span class="alert"></span>
-				</div>
-			</div>
 
-			<div class="row">
-				<div class="two columns">
-					<label for="passwordInscriptionConfirm">Confirmation</label>
+				<div class="row">
+					<div class="two columns">
+						<label>Champs date</label>
+					</div>
+					<div class="six columns">
+						<input type="date" name="date" id="date" class="requis focus" tabindex="6" required/>
+						<input type="time" name="time" id="time" class="requis focus" tabindex="6" required/>
+						<input type="datetime" name="datetime" id="datetime" class="requis focus" tabindex="6" required/>
+					</div>
+					<div class="four columns">
+						<span class="infoPlus"></span>
+						<span class="alert"></span>
+					</div>
 				</div>
-				<div class="six columns">
-					<input type="password" name="passwordInscriptionConfirm" id="passwordInscriptionConfirm" placeholder="Confirmez votre mot de passe" class="requis focus" tabindex="6" required/>
-				</div>
-				<div class="four columns">
-					<span class="infoPlus"></span>
-					<span class="alert"></span>
-				</div>
-			</div>
 
-			<div class="row">
-				<div class="two columns">
-					<label for="url">Url</label>
+				<div class="row">
+					<div class="two columns">
+						<label for="url">Champs url</label>
+					</div>
+					<div class="six columns">
+						<input type="month" name="month" id="month" placeholder="" class="requis focus" tabindex="6" required/>
+						<input type="week" name="week" id="week" placeholder="" class="requis focus" tabindex="6" required/>
+					</div>
+					<div class="four columns">
+						<span class="infoPlus"></span>
+						<span class="alert"></span>
+					</div>
 				</div>
-				<div class="six columns">
-					<input type="url" name="url" id="url" placeholder="http://Adresse de votre site" class="requis focus" tabindex="6" required/>
-				</div>
-				<div class="four columns">
-					<span class="infoPlus"></span>
-					<span class="alert"></span>
-				</div>
-			</div>
 
-			<div class="row">
-				<div class="two columns">
-					<label for="tel">Telephone</label>
-				</div>
-				<div class="six columns">
-					<input type="tel" name="tel" id="tel" placeholder="T&eacute;l&eacute;phone" class="requis focus" tabindex="6" required/>
-				</div>
-				<div class="four columns">
-					<span class="infoPlus"></span>
-					<span class="alert"></span>
-				</div>
-			</div>
+				<div class="row">
+					<div class="two columns">
+						<label for="url">Range</label>
+					</div>
+					<div class="six columns">
+						<input type="range" name="range" id="range" placeholder="" class="requis focus" tabindex="6" required/>
 
-			<div class="row">
-				<div class="two columns">
-					<label>Champs date</label>
+					</div>
+					<div class="four columns">
+						<span class="infoPlus"></span>
+						<span class="alert"></span>
+					</div>
 				</div>
-				<div class="six columns">
-					<input type="date" name="date" id="date" class="requis focus" tabindex="6" required/>
-					<input type="time" name="time" id="time" class="requis focus" tabindex="6" required/>
-					<input type="datetime" name="datetime" id="datetime" class="requis focus" tabindex="6" required/>
-				</div>
-				<div class="four columns">
-					<span class="infoPlus"></span>
-					<span class="alert"></span>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="two columns">
-					<label for="url">Champs url</label>
-				</div>
-				<div class="six columns">
-					<input type="month" name="month" id="month" placeholder="" class="requis focus" tabindex="6" required/>
-					<input type="week" name="week" id="week" placeholder="" class="requis focus" tabindex="6" required/>
-				</div>
-				<div class="four columns">
-					<span class="infoPlus"></span>
-					<span class="alert"></span>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="two columns">
-					<label for="url">Range</label>
-				</div>
-				<div class="six columns">
-					<input type="range" name="range" id="range" placeholder="" class="requis focus" tabindex="6" required/>
-
-				</div>
-				<div class="four columns">
-					<span class="infoPlus"></span>
-					<span class="alert"></span>
-				</div>
-			</div>
 
 
-		</fieldset>
+			</fieldset>
 
-		<fieldset class="block-form">
+			<fieldset class="block-form">
 
-			<h3>Titre de bloc</h3>
-			<h4>Je souhaite recevoir la <a target="_blank" href="/newsletter/newsletter.html" tabindex="50">newsletter</a></h4>
+				<h3>Titre de bloc</h3>
+				<h4>Je souhaite recevoir la <a target="_blank" href="/newsletter/newsletter.html" tabindex="50">newsletter</a></h4>
 
-			<div class="row">
-				<div class="twelve columns">
-					<label for="oui">
-						<input type="radio" name="newsletter" id="oui" value="-1" styleClass="click inline"/>
-						Oui
-					</label>
-					<label for="non">
-						<input type="radio" name="newsletter" id="non" value="0" styleClass="click"/>
-						Non
-					</label>
-					<span class="alert"></span>
+				<div class="row">
+					<div class="twelve columns">
+						<label for="oui">
+							<input type="radio" name="newsletter" id="oui" value="-1" styleClass="click inline"/>
+							Oui
+						</label>
+						<label for="non">
+							<input type="radio" name="newsletter" id="non" value="0" styleClass="click"/>
+							Non
+						</label>
+						<span class="alert"></span>
+					</div>
 				</div>
-			</div>
 
-			<h4>Format</h4>
-			<div class="row">
-				<div class="twelve columns">
-					<label for="html">
-						<input type="radio" name="recevoir" id="html" value="-1"/>
-						Html
-					</label>
-					<label for="texte">
-						<input type="radio" name="recevoir" id="texte" value="0"/>
-						Texte
-					</label>
-					<label for="ne_sait_pas">
-						<input type="radio" name="recevoir" id="ne_sait_pas" value="2"/>
-						Ne sait pas
-					</label>
-					<span class="alert"></span>
+				<h4>Format</h4>
+				<div class="row">
+					<div class="twelve columns">
+						<label for="html">
+							<input type="radio" name="recevoir" id="html" value="-1"/>
+							Html
+						</label>
+						<label for="texte">
+							<input type="radio" name="recevoir" id="texte" value="0"/>
+							Texte
+						</label>
+						<label for="ne_sait_pas">
+							<input type="radio" name="recevoir" id="ne_sait_pas" value="2"/>
+							Ne sait pas
+						</label>
+						<span class="alert"></span>
+					</div>
 				</div>
-			</div>
 
-			<div class="row">
-				<div class="twelve columns">
-					<label>
-						<input type="checkbox" id="emailInfo" name="emailInfo" value="-1"/>
-						J'accepte de recevoir par email des informations de la part de CADREMPLOI.fr (&eacute;volution de nos services, etc.)
-					</label>
+				<div class="row">
+					<div class="twelve columns">
+						<label>
+							<input type="checkbox" id="emailInfo" name="emailInfo" value="-1"/>
+							J'accepte de recevoir par email des informations de la part de site.fr (&eacute;volution de nos services, etc.)
+						</label>
 
+					</div>
 				</div>
-			</div>
 
-			<div class="row">
-				<div class="twelve columns">
-					<label>
-						<input type="checkbox" name="pub" value="-1"/>
-						J'accepte de recevoir par email de la publicit&eacute; propos&eacute;e par des entreprises partenaires de CADREMPLOI.fr.
-					</label>
+				<div class="row">
+					<div class="twelve columns">
+						<label>
+							<input type="checkbox" name="pub" value="-1"/>
+							J'accepte de recevoir par email de la publicit&eacute; propos&eacute;e par des entreprises partenaires de site.fr.
+						</label>
+					</div>
 				</div>
-			</div>
 
-			<div class="row">
-				<div class="twelve columns">
-					<button tabindex="9" type="submit" id="idSubmitForm" class="button primary medium">Valider</button>
+				<div class="row">
+					<div class="twelve columns">
+						<button tabindex="9" type="submit" id="idSubmitForm" class="button primary medium">Valider</button>
+					</div>
 				</div>
-			</div>
 
-		</fieldset>
-	</form>
-</div>
-</body>
+			</fieldset>
+		</form>
+	</div>
+	</body>
 </html>
