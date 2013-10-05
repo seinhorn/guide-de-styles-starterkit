@@ -3,7 +3,7 @@
 @import "../settings";
 
 // Construction de la sprite par compass à partir des images
-// du répertoire http://assets.cadremploi.fr/assets/img/icones/ qui ont l'extension
+// du répertoire img/icones/ qui ont l'extension
 // png
 @import "icones/*.png";
 @include all-icones-sprites;
