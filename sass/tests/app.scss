@@ -24,7 +24,7 @@
 @include init-global-fonts();
 @include init-typo();
 @include init-grid();
-@include grid-block();
+//@include grid-block();
 @include init-panel();
 @include action-buttons();
 @include default-form();

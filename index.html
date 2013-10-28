@@ -12,81 +12,47 @@
 		<link rel="stylesheet" href="js/vendor/snippet/jquery.snippet.css"/>
 	</head>
 	<body data-tag-name="body" class="simple">
+
 		<div id="mdetect"></div>
+
 		<div class="container">
 
 			<header class="header">
 				<nav role="navigation" tabindex="0"></nav>
 			</header>
 
-			<section role="main">
-				
-				<div class="panel-page default" id="charte"><!-- Page charte -->
-					<h2><span>Charte graphique</span></h2>
-					<div class="block-section" id="color-swatches"></div>
-					<div class="block-section" id="fonts"></div>
+			<section role="main"></section>
 
-				</div><!-- //#charte -->
-
-				<div class="panel-page" id="typography">
-					<h2><span>Typography</span></h2>
-				</div>
-
-				<div class="panel-page" id="layout"><!-- Page layout -->
-					<h2><span>Layout</span></h2>
-					<div class="block-section" id="grid"></div>
-					<!-- <div class="block-section" id="grid-block"></div> -->
-					<div class="block-section" id="panel"></div>
-					<!-- <div class="block-section" id="off-canvas"></div> -->
-				</div>
-
-				<div class="panel-page" id="ui"><!-- Page ui -->
-					<h2><span>Interface utilisateur</span></h2>
-					<!-- <div class="block-section" id="nav"></div> -->
-					<div class="block-section" id="boutons"></div>
-					<!-- <div class="block-section" id="tooltips"></div> -->
-					<!--<div class="block-section" id="nav"></div>-->
-					<!--<div class="block-section" id="tooltips"></div>-->
-				</div>
-
-				<div class="panel-page" id="forms"><!-- Page formulaires -->
-					<h2><span>Les formulaires</span></h2>
-					<div class="block-section" id="form"></div>
-					<div class="block-section" id="alert-boxes"></div>
-				</div>
-
-				<!--<div class="block-section panel-page" id="fx">&lt;!&ndash; Page fx &ndash;&gt;-->
-					<!--<h2><span>Effets</span></h2>-->
-					<!--<div class="block-section" id="masques"></div>-->
-				<!--</div>&lt;!&ndash; // Page fx &ndash;&gt;-->
-
-			</section>
 		</div><!-- //.container -->
+
 		<script type="ext/x-handlebars-template" id="tpl-nav">
 			<a href="#menu">Menu</a>
-			{{#panelPage}}
-			<ul id="{{id}}-nav">
-				<li>
-					<a href="{{hash}}" data-panelpage="{{id}}">{{title}}</a>
-					{{#if patterns}}
-					<ul{{#if OuvertureSousMenu}}  data-dir="{{OuvertureSousMenu}}"{{/if}}>
-						{{#patterns}}
-						<li>
-							<a href="">{{title}}</a>
-							{{#if patterns}}
-							<ul{{#if OuvertureSousMenu}} data-dir="{{OuvertureSousMenu}}"{{/if}}>
-								{{#patterns}}
-								<li><a href="">{{title}}</a></li>
-								{{/patterns}}
-							</ul>
-							{{/if}}
-						</li>
-						{{/patterns}}
-					</ul>
-					{{/if}}
+			{{#panelPage}}<ul id="{{id}}-nav">
+				<li><a href="{{hash}}" data-panelpage="{{id}}">{{title}}</a>
+					{{#if patterns}}<ul{{#if OuvertureSousMenu}}  data-dir="{{OuvertureSousMenu}}"{{/if}}>
+						{{#patterns}}<li><a href="">{{title}}</a>
+							{{#if patterns}}<ul{{#if OuvertureSousMenu}} data-dir="{{OuvertureSousMenu}}"{{/if}}>
+								{{#patterns}}<li><a href="">{{title}}</a></li>{{/patterns}}
+							</ul>{{/if}}
+						</li>{{/patterns}}
+					</ul>{{/if}}
 				</li>
-			</ul>
-			{{/panelPage}}
+			</ul>{{/panelPage}}
+		</script>
+
+		<script type="ext/x-handlebars-template" id="tpl-tab">
+			<section class="tabs">
+				<ul>
+					<li><a href="#table-panel1">Example</a></li>
+					<li><a href="#table-panel2">Html</a></li>
+				</ul>
+				<div class="tab" id="table-panel1">
+					{{{example}}}
+				</div>
+				<div class="tab" id="table-panel2">
+					<pre class="htmlCode">{{example}}</pre>
+				</div>
+			</section>
 		</script>
 
 		<script type="text/javascript" data-main="js/main" src="js/vendor/require/2.1.8/require.js"></script>

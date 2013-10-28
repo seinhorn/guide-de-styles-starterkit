@@ -6,9 +6,11 @@
 @import "../../modules/grid";
 @import "../../modules/fonts";
 @import "../../modules/typography";
+@import "../../modules/tabs";
 
-@include reset();
-@include init-global-fonts();
-@include init-typo();
-@include init-grid();
-@include demo-typo();
+@include reset;
+@include init-global-fonts;
+@include init-typo;
+@include init-grid;
+@include demo-typo;
+@include tabs;
