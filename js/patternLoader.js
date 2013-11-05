@@ -22,36 +22,10 @@ define(['jquery','handlebars','setting'], function($, Handlebars, setting){
 				
 				// on recupere la partie du code de la page qui nous interesse
 				var page  = $(data).filter(options.loadContext);
-				console.log('Page => '+file +' : '+page);
-				
-				var exemple = setting.panelPage;
-				if (setting.panelPage.patterns.code) {
-					var codePattern = [];
-					// on charge le template
-					var template = $('#tpl-tab').html();
-					var output = Handlebars.compile(template);
 
-					$(page).find('.pattern').each(function(i) {
-						codePattern[i] = $(this).html();
-						console.log('codePattern['+i+'] => ' + codePattern[i]);
-					});
-				
-						
-					//var output2 = output(pattern);
-				//var pattern = $(page).find('.pattern').html();
-				//console.log($(page).find('.pattern').html());
-					//$('section.pattern', page).each(function(index){
-						//$(this).replaceWith(output($(this).html()));
-						//console.log('Code['+index+'] ==> '+this);
-					//});
+				//.find("pre.htmlCode").snippet("html", {style:"acid",transparent:true})
 
-					//$el.append(output2)
-						//.find("pre.htmlCode").snippet("html", {style:"acid",transparent:true})
-					//;
-					//console.log(output2);
-				} else {
-					$el.append(page);
-				}
+				$el.append(page).find("pre.htmlCode").snippet("html", {style:"acid",transparent:true});
 
 				if (typeof myCcallback === 'function') {
 					myCcallback.call(this);
