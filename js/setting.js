@@ -34,10 +34,45 @@ define([], function(){
 				,hash: 		''
 				,patterns:	[
 					{
-						id:				'typography'
-						,title:			'Typography'
+						id:				'titles'
+						,title:			'Titres'
 						,hash:			''
-						,src: 			'patterns/charte/typography.html'
+						,src: 			'patterns/typography/titles.html'
+						,loadContext: 	'.page-typography'
+						,code: 			true
+					},{
+						id:				'lists'
+						,title:			'Les listes'
+						,hash:			''
+						,src: 			'patterns/typography/lists.html'
+						,loadContext: 	'.page-typography'
+						,code: 			true
+					},{
+						id:				'quotes'
+						,title:			'Citations'
+						,hash:			''
+						,src: 			'patterns/typography/quotes.html'
+						,loadContext: 	'.page-typography'
+						,code: 			true
+					},{
+						id:				'tables'
+						,title:			'Tableaux'
+						,hash:			''
+						,src: 			'patterns/typography/tables.html'
+						,loadContext: 	'.page-typography'
+						,code: 			true
+					},{
+						id:				'others'
+						,title:			'Autres balises'
+						,hash:			''
+						,src: 			'patterns/typography/others.html'
+						,loadContext: 	'.page-typography'
+						,code: 			true
+					},{
+						id:				'spaces'
+						,title:			'Espaces'
+						,hash:			''
+						,src: 			'patterns/typography/spaces.html'
 						,loadContext: 	'.page-typography'
 						,code: 			true
 					}
@@ -88,21 +123,39 @@ define([], function(){
 				,hash: 		''
 				,patterns:	[
 					{
-						id: 			'form'
-						,title: 		''
-						,hash: 			''
-						,src: 			'patterns/forms/forms.html'
-						,loadContext: 	'.page-form'
-						,code:			true
-					}
-					,{
+						id:'chtext',
+						title:'Champs simples',
+						hash:'#chtext',
+						src: 'patterns/forms/forms-champs-simples.html',
+						loadContext:'.page-form',
+						code:true,
+						callback: function(){}
+					},{
+						id:'chnum',
+						title:'Champs num\u00E9rique',
+						hash:'#chnum',
+						src: 'patterns/forms/forms-champs-numeriques.html',
+						loadContext:'.page-form',
+						code:true,
+						callback: function(){}
+					},{
+						id:'chautre',
+						title:'Autres Champs',
+						hash:'#chautre',
+						src: 'patterns/forms/forms-champs-autres.html',
+						loadContext:'.page-form',
+						code:true,
+						callback: function(){}
+					},{
 						id: 			'alert-boxes'
 						,title: 		'Alert Box'
 						,hash: 			''
 						,src: 			'patterns/forms/alert-boxes.html'
 						,loadContext: 	'.page-alert-boxes'
 						,code: 			true
-						,calback: 		['$.alertBoxes()']
+						,callback: 		function(){
+							$(".alert-box").alertBoxes();
+						}
 					}
 				]
 			}

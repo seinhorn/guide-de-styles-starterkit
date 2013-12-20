@@ -1,4 +1,3 @@
-
 require(
 	[
 		'setting',
@@ -61,6 +60,9 @@ require(
 								code: this.code
 							},
 							function(){
+								if(self.patterns[i].callback != undefined){
+									self.patterns[i].callback();
+								}
 								$('.tabs').tabs();
 							}
 						);

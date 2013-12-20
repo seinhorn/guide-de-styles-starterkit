@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="fr"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="fr"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="fr"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="fr"><!--<![endif]-->
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width" />
+		<title>Pattern typography</title>
+		<link rel="stylesheet" href="../../css/tests/css/typography.css">
+		<link rel="stylesheet" href="../../js/vendor/snippet/jquery.snippet.css"/>
+	</head>
+	<body>
+		<div class="page-typography container">
+			<h4>Citation &ndash; Blockquote</h4>
+			<section class="tabs">
+				<ul>
+					<li><a href="#bl-panel1">Example</a></li>
+					<li><a href="#bl-panel2">Html</a></li>
+				</ul>
+				<div class="tab" id="bl-panel1">
+					<blockquote cite="http://www.projeturbain.com">
+						<p>Duis autem vel eum iriure dolor in hendrerit in <q>vulputate velit esse molestie consequat</q>, vel illum dolore eu feugiat nulla facilisis.</p>
+					</blockquote>
+				</div>
+				<div class="tab" id="bl-panel2">
+					<pre class="htmlCode">&lt;blockquote cite="http://www.projeturbain.com"&gt;&nbsp;&nbsp;&lt;p>Duis autem vel eum iriure dolor in hendrerit in &lt;q&gt;vulputate velit esse molestie consequat&lt;/q&gt;, vel illum dolore eu feugiat nulla facilisis.&lt;/p&gt;&lt;/blockquote&gt;</pre>
+				</div>
+			</section>
+
+		</div>
+		<script type="text/javascript" src="../../js/vendor/jquery/1.8.3/jquery.js"></script>
+		<script type="text/javascript" src="../../js/vendor/jquery-ui/1.9.2/jquery-ui-1.9.2.custom.min.js"></script>
+		<script type="text/javascript" src="../../js/vendor/snippet/jquery.snippet.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('.tabs').tabs();
+				$("pre.htmlCode").snippet(
+						"html",
+						{
+							style:"acid"
+							//,transparent:true
+						}
+				);
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!--[if IE 9]> <html class="no-js ie9" lang="fr"><![endif]-->
+<!--[if IE 8]> <html class="no-js ie8" lang="fr"><![endif]-->
+<!--[if IE 7]> <html class="no-js ie7" lang="fr"><![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="fr"><!--<![endif]-->
+<head>
+	<meta charset="iso-8859-15"/>
+	<meta name="viewport" content="width=device-width" />
+	<title>Formulaires</title>
+	<link rel="stylesheet" href="http://assets.cadremploi.fr/assets/css/fcms-ce/tests/css/forms.css">
+	<!--[if IE 7]><link rel="stylesheet" type="text/css" href="http://assets.cadremploi.fr/assets/css/fcms-ce/ie7.css" media="screen" /><![endif]-->
+	<style type="text/css">
+	pre {
+		border-left: 4px solid blue;
+		background: #000;
+		color: #fff;
+	}
+	</style>
+
+</head>
+<body>
+<div class="container page-form">
+	<form name="formulaire" id="formulaire" action="" method="post">
+		<fieldset id="infoPersos" class="block-form">
+			<legend class="invisible">Pas encore inscrit ? Cr&eacute;ez un compte en remplissant le formulaire suivant.</legend>
+			<h3>Les champs simples</h3>
+
+			<div class="row">
+				<div class="two columns">
+					<label for="nom">Type text</label>
+				</div>
+				<div class="six columns">
+					<input type="text" name="nom" id="nom" value="" class="requis focus" placeholder="Nom" tabindex="1" required autofocus/>
+				</div>
+				<div class="four columns">
+					<span class="infoPlus">Champs de type text</span>
+					<span class="alert"></span>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="two columns">
+					<label for="emailInscription">Votre email</label>
+				</div>
+				<div class="six columns">
+					<input type="email" name="emailInscription" id="emailInscription" value="" placeholder="Votre E-mail" class="requis focus" tabindex="2" required/>
+				</div>
+				<div class="four columns">
+					<span class="infoPlus">Votre email vous servira &agrave; vous identifier sur le site.</span>
+					<span class="alert"></span>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="two columns">
+					<label for="passwordInscription">Mot de passe</label>
+				</div>
+				<div class="six columns">
+					<input type="password" name="passwordInscription" id="passwordInscription" placeholder="Votre mot de passe" class="requis focus" tabindex="3" required/>
+				</div>
+				<div class="four columns">
+					<span class="infoPlus">(au moins 5 caract&egrave;res)</span>
+					<span class="alert"></span>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="two columns">
+					<label for="passwordInscriptionConfirm">Confirmation</label>
+				</div>
+				<div class="six columns">
+					<input type="password" name="passwordInscriptionConfirm" id="passwordInscriptionConfirm" placeholder="Confirmez votre mot de passe" class="requis focus" tabindex="4" required/>
+				</div>
+				<div class="four columns">
+					<span class="infoPlus"></span>
+					<span class="alert"></span>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="two columns">
+					<label for="search">Champ de recherche</label>
+				</div>
+				<div class="six columns">
+					<input type="search" name="search" id="search" placeholder="Recherche" class="requis focus" tabindex="5"/>
+				</div>
+				<div class="four columns">
+					<span class="infoPlus"></span>
+					<span class="alert"></span>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="two columns">
+					<label for="url">Url</label>
+				</div>
+				<div class="six columns">
+					<input type="url" name="url" id="url" placeholder="http://Adresse de votre site" class="requis focus" tabindex="6" required/>
+				</div>
+				<div class="four columns">
+					<span class="infoPlus"></span>
+					<span class="alert"></span>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="two columns">
+					<label for="tel">Telephone</label>
+				</div>
+				<div class="six columns">
+					<input type="tel" name="tel" id="tel" placeholder="T&eacute;l&eacute;phone" class="requis focus" tabindex="7" required/>
+				</div>
+				<div class="four columns">
+					<span class="infoPlus"></span>
+					<span class="alert"></span>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="two columns">
+					<label for="textarea">Textarea</label>
+				</div>
+				<div class="six columns">
+					<textarea name="textarea" id="textarea" placeholder="Textarea" class="" tabindex="8"/></textarea>
+				</div>
+				<div class="four columns">
+					<span class="infoPlus"></span>
+					<span class="alert"></span>
+				</div>
+			</div>
+
+		</fieldset>
+
+	</form>
+</div>
+</body>
+</html>

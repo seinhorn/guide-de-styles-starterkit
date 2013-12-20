@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!--[if IE 9]> <html class="no-js ie9" lang="fr"><![endif]-->
+<!--[if IE 8]> <html class="no-js ie8" lang="fr"><![endif]-->
+<!--[if IE 7]> <html class="no-js ie7" lang="fr"><![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="fr"><!--<![endif]-->
+<head>
+	<meta charset="iso-8859-15"/>
+	<meta name="viewport" content="width=device-width" />
+	<title>Formulaires</title>
+	<link rel="stylesheet" href="http://assets.cadremploi.fr/assets/css/fcms-ce/tests/css/forms.css">
+	<!--[if IE 7]><link rel="stylesheet" type="text/css" href="http://assets.cadremploi.fr/assets/css/fcms-ce/ie7.css" media="screen" /><![endif]-->
+	<style type="text/css">
+	pre {
+		border-left: 4px solid blue;
+		background: #000;
+		color: #fff;
+	}
+	</style>
+
+</head>
+<body>
+<div class="container page-form">
+	<form name="formulaire" id="formulaire" action="" method="post">
+		<fieldset id="infoPersos" class="block-form">
+
+			<h3>Liste de choix</h3>
+
+			<div class="row">
+				<div class="three columns">
+					<label for="civilite">Liste de choix</label>
+				</div>
+				<div class="three columns">
+					<select name="civilite" id="civilite" tabindex="1">
+						<option value="3">Mademoiselle</option>
+						<option value="2">Madame</option>
+						<option value="1">Monsieur</option>
+					</select>
+				</div>
+				<div class="three columns">
+					<label for="navigateurs">Input + dataliste</label>
+				</div>
+				<div class="three columns">
+					<input list="navigateurs" />
+					<datalist id="navigateurs">
+						<option value="Chrome">
+						<option value="Firefox">
+						<option value="Internet Explorer">
+						<option value="Opera">
+						<option value="Safari">
+					</datalist>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="three columns"><label for="range">Range simple</label></div>
+				<div class="three columns"><input type="range" name="range" id="range" tabindex="6"/></div>
+				<div class="three columns"><label for="range2">Range</label></div>
+				<div class="three columns"><input type="range" name="range2" id="range2" tabindex="6" min="0" max="15" step="3"/></div>
+			</div>
+
+			<div class="row">
+				<div class="three columns">
+					<label>Input type color :<input type=color value="#e76252"></label>
+				</div>
+				<div class="three columns">
+					<label>Barre de progression &agrave; 70%<progress max="100" value="70"></progress></label>
+				</div>
+				<div class="three columns">
+					<label>Barre de progression <progress></progress></label>
+				</div>
+				<div class="three columns">
+					<label><meter min="200" data-max="100" value="120"></meter></label>
+				</div>
+			</div>
+
+		</fieldset>
+
+		<fieldset class="block-form">
+
+			<h3>Cases &agrave; cocher</h3>
+			<div class="row">
+				<div class="twelve columns">
+					<label for="oui">
+						<input type="radio" name="newsletter" id="oui" value="-1" styleClass="click inline"/>
+						Oui
+					</label>
+					<label for="non">
+						<input type="radio" name="newsletter" id="non" value="0" styleClass="click"/>
+						Non
+					</label>
+					<span class="alert"></span>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="twelve columns">
+					<label>
+						<input type="checkbox" id="emailInfo" name="emailInfo" value="-1"/>
+						J'accepte de recevoir par email des informations de la part de CADREMPLOI.fr (&eacute;volution de nos services, etc.)
+					</label>
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="twelve columns">
+					<label>
+						<input type="checkbox" name="pub" value="-1"/>
+						J'accepte de recevoir par email de la publicit&eacute; propos&eacute;e par des entreprises partenaires de CADREMPLOI.fr.
+					</label>
+				</div>
+			</div>
+
+
+		</fieldset>
+		<fieldset class="block-form">
+			<div class="row">
+				<div class="twelve columns">
+					<button type="submit" id="submitForm" class="button primary medium"><span>Valider</span></button>
+					<button type="reset" id="tuFouLesAstico" class="button primary medium">Annuler</button>
+					<a href="" class="button primary medium">Faire un lien</a>
+				</div>
+			</div>
+
+		</fieldset>
+
+	</form>
+</div>
+</body>
+</html>

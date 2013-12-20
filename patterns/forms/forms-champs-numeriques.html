@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!--[if IE 9]> <html class="no-js ie9" lang="fr"><![endif]-->
+<!--[if IE 8]> <html class="no-js ie8" lang="fr"> <![endif]-->
+<!--[if IE 7]> <html class="no-js ie7" lang="fr"><![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="fr"><!--<![endif]-->
+<head>
+	<meta charset="iso-8859-15"/>
+	<meta name="viewport" content="width=device-width" />
+	<title>Formulaires</title>
+	<link rel="stylesheet" href="http://assets.cadremploi.fr/assets/css/fcms-ce/tests/css/forms.css">
+	<!--[if IE 7]>
+	<link rel="stylesheet" type="text/css" href="http://assets.cadremploi.fr/assets/css/fcms-ce/ie7.css" media="screen" />
+	<![endif]-->
+	<style type="text/css">
+	pre {
+		border-left: 4px solid blue;
+		background: #000;
+		color: #fff;
+	}
+	</style>
+
+</head>
+<body>
+<div class="container page-form">
+	<form name="formulaire" id="formulaire" action="" method="post">
+		<fieldset class="block-form">
+
+			<h3>Champs de type date et num&eacute;riques</h3>
+
+			<div class="row">
+				<div class="three columns">
+					<label>Champs de type Num&eacute;risque</label>
+				</div>
+				<div class="three columns">
+					<input type="number" name="number" id="number" class="focus" tabindex="8"/>
+					<span class="infoPlus"></span><span class="alert"></span>
+				</div>
+				<div class="three columns">
+					<label>Champs de type Num&eacute;risque</label>
+				</div>
+				<div class="three columns">
+					<input type="number" name="number2" id="number2" class="focus" tabindex="9" min="0" max="15" step="3"/>
+					<span class="infoPlus"></span><span class="alert"></span>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="three columns">
+					<label>Champs de type date</label>
+				</div>
+				<div class="three columns">
+					<input type="date" name="d" id="datetimed" class="requis focus"/>
+					<span class="infoPlus"></span><span class="alert"></span>
+				</div>
+				<div class="three columns">
+					<label>Champs de type Month</label>
+				</div>
+				<div class="three columns">
+					<input type="month" name="m" id="m" class="focus"/>
+					<span class="infoPlus"></span><span class="alert"></span>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="three columns">
+					<label>Champs de type Week</label>
+				</div>
+				<div class="three columns">
+					<input type="week" name="w" id="w" class="focus"/>
+					<span class="infoPlus"></span><span class="alert"></span>
+				</div>
+				<div class="three columns">
+					<label>Champs de type Time</label>
+				</div>
+				<div class="three columns">
+					<input type="time" name="time" id="time" class="focus"/>
+					<span class="infoPlus"></span><span class="alert"></span>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="three columns">
+					<label>Champs de type datetime</label>
+				</div>
+				<div class="three columns">
+					<input type="datetime" name="dt" id="dt" class="focus"/>
+					<span class="infoPlus"></span><span class="alert"></span>
+				</div>
+				<div class="three columns">
+					<label>Champs de type datetime-local</label>
+				</div>
+				<div class="three columns">
+					<input type="datetime-local" name="dtl" id="dtl" class="focus"/>
+					<span class="infoPlus"></span><span class="alert"></span>
+				</div>
+			</div>
+
+		</fieldset>
+
+
+	</form>
+</div>
+</body>
+</html>
