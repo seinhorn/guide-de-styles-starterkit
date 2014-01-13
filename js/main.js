@@ -6,11 +6,8 @@ require(
 		'handlebars',
 		'snippet',
 		'alertBoxes',
-		'patternLoader',
 		'jquery',
-		'h5f',
-		'affichePanelPage',
-		'navigation'
+		'h5f'
 	],
 	function (setting, Portfolio) {
 
@@ -25,13 +22,6 @@ require(
 			$(window).resize(function(){
 				guistyles.setBodyViewportClasses();
 			});
-
-			/*
-			var tplNav = $('#tpl-nav').html();
-			var output = Handlebars.compile(tplNav);
-
-			var $navigation = $('nav[role="navigation"]');
-			$navigation.append(output(setting));*/
 
 			// Construction du corps de la page
 			var $contener = $('section[role=main]');
