@@ -1,6 +1,7 @@
 require(
 	[
 		'setting',
+		'Portfolio',
 		'jquery.ui.tabs',
 		'handlebars',
 		'snippet',
@@ -11,28 +12,26 @@ require(
 		'affichePanelPage',
 		'navigation'
 	],
-	function (setting) {
+	function (setting, Portfolio) {
 
 		$(function(){
-			// permet de savoir quel media queries est utilise dans les css
-			// les classes sont ajoutes a la balise body
-			var bodyViewportClasses = function() {
 
-				var nav_display = $('#mdetect').css('display');
-				if (nav_display === 'block') $("body").removeClass("big-screen").addClass("small-screen");
-				if (nav_display === 'none') $("body").removeClass("small-screen").addClass("big-screen");
-			};
+			var guistyles = new Portfolio({
+				detectPattern: '#mdetect'
+			});
 
-			$(window).resize(function(){ bodyViewportClasses(); });
+			guistyles.init();
 
-			bodyViewportClasses();
+			$(window).resize(function(){
+				guistyles.setBodyViewportClasses();
+			});
 
-			// Construction du menu de navigation
+			/*
 			var tplNav = $('#tpl-nav').html();
 			var output = Handlebars.compile(tplNav);
 
 			var $navigation = $('nav[role="navigation"]');
-			$navigation.append(output(setting));
+			$navigation.append(output(setting));*/
 
 			// Construction du corps de la page
 			var $contener = $('section[role=main]');
@@ -72,8 +71,7 @@ require(
 				}
 			});
 
-			$navigation.affichePanelPage().navigation();
-
+			//$navigation.affichePanelPage().navigation();
 
 		});
 

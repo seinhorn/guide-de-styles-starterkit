@@ -12,6 +12,8 @@ requirejs.config({
 		'h5f': 		'vendor/h5f/h5f.min',
 		'snippet': 	'vendor/snippet/jquery.snippet.min',
 		'handlebars': 	'vendor/handlebars/1.0.0/handlebars'
+		//,
+		//'Portfolio' : Por
 	},
 	shim: {
 		'jquery': { exports: '$' },

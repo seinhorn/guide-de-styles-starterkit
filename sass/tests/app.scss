@@ -49,7 +49,7 @@
 		display: none;
 	}
 }
-@include respondTo(largemscreen) {
+@include respondTo(largescreen) {
 	#mdetect { display: none; }
 }
 
