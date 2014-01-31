@@ -90,7 +90,7 @@ require(
 				);
 			};
 
-			//$navigation.affichePanelPage().navigation();
+			$('[role="navigation"]').navigation();
 
 		});
 
