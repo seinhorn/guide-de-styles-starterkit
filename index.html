@@ -27,8 +27,8 @@
 
 		<script type="ext/x-handlebars-template" id="tpl-nav">
 			<a href="#menu">Menu</a>
-			{{#panelPage}}<ul id="{{id}}-nav">
-				<li><a href="{{hash}}" data-panelpage="{{id}}">{{title}}</a>
+			{{#if panelPage}}<ul id="{{id}}-nav">
+				{{#panelPage}}<li><a href="{{hash}}" data-panelpage="{{id}}">{{title}}</a>
 					<!-- {{#if patterns}}<ul{{#if OuvertureSousMenu}}  data-dir="{{OuvertureSousMenu}}"{{/if}}>
 						{{#patterns}}<li><a href="">{{title}}</a>
 							{{#if patterns}}<ul{{#if OuvertureSousMenu}} data-dir="{{OuvertureSousMenu}}"{{/if}}>
@@ -36,8 +36,8 @@
 							</ul>{{/if}}
 						</li>{{/patterns}}
 					</ul>{{/if}} -->
-				</li>
-			</ul>{{/panelPage}}
+				</li>{{/panelPage}}
+			</ul>{{/if}}
 		</script>
 
 		<script type="ext/x-handlebars-template" id="tpl-tab">
