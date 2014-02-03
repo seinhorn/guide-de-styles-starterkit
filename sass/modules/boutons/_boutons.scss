@@ -27,9 +27,20 @@
 	width: image-width($img);
 	height: image-height($img);
 }
+@mixin bouton-icon($icon, $icon-color, $icon-top, $icon-size) {
+	position: relative;
+	span { // icone
+		@include icons($texte: $icon, $position: absolute, $left:0.47em, $top: $icon-top, $color: $icon-color, $font-size: $icon-size);
+		padding-left: 1em;
+	}
+	&:hover {
+		text-decoration: none;
+	}
+}
 @mixin action-buttons(){
     .button {
 		@include reset-button;
+	    margin-bottom: 0.3em;
 		padding: 0 1em;
 	}
 	.rounded {
@@ -111,6 +122,10 @@
 		&.search {
 		  	color: $white;
 		}
+	}
+
+	.loupe { // icone cloche
+		@include bouton-icon('\67', $white, 6px, 1.2em);
 	}
 
 	@include respondTo(smallscreen){
