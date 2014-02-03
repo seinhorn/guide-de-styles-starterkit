@@ -2,15 +2,17 @@
 
 $panel-padding: 0.5em 1.2em !default;
 $panel-margin: 1em 0 !default;
+$third-color-light-ultra: red !default;
 
-@mixin corps-panel() {
-
-}
-
-@mixin panel() {
+@mixin panel($color:false) {
 	.panel {
 		padding: $panel-padding;
 		margin: $panel-margin;
+
+		@if $color {
+			background-color: $color;
+		}
+
 		&.form {
 			@extend .third-bg-light-ultra;
 		}
@@ -20,4 +22,7 @@ $panel-margin: 1em 0 !default;
 @mixin init-panel() {
 	@include panel();
 }
-	
+
+.page-grid {
+	@include panel($third-color-light-ultra);
+}
