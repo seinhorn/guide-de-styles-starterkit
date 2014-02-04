@@ -2,6 +2,7 @@ require(
 	[
 		'setting',
 		'Portfolio',
+		'collapsed',
 		'jquery.ui.tabs',
 		'patternLoader',
 		'handlebars',
@@ -90,8 +91,7 @@ require(
 				);
 			};
 
-			//$navigation.affichePanelPage().navigation();
-
+			$('[role="navigation"]').navigation();
 		});
 
 	}

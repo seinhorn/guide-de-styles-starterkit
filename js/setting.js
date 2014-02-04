@@ -160,6 +160,25 @@ define([], function(){
 				]
 			}
 			,{
+				id: 		'modules'
+				,title: 	'Modules'
+				,titlePage: 'Modules'
+				,hash: 		''
+				,patterns:	[
+					{
+						id:				'carte'
+						,title:			'Carte de France'
+						,hash:			''
+						,src:			'patterns/modules/carte-de-france.html'
+						,loadContext:	'.page-carte'
+						,code:			true
+						,callback: 		function(){
+							$('.collapsed-search').collapseSearch();
+						}
+					}
+				]
+			}
+			,{
 				id: 		'fx'
 				,title: 	'Effets'
 				,titlePage: 'Effets'
