@@ -1,0 +1,153 @@
+@charset "iso-8859-15";
+
+@import "compass/css3";
+
+$item-listview-border-color: #c4c8cc !default;
+
+// Icone
+@mixin icon-before() {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 1.2em;
+}
+// Icone chevron
+@mixin icon-chevron() {
+	position: absolute;
+	top: 9px;
+	right: 6px;
+	width: image-width('icones/chevron.png');
+	height: image-height('icones/chevron.png');
+	z-index:3;
+}
+// Icone chevron si au moins un enfant est coche mais pas tous
+@mixin icon-chevron-checked() {
+	position: absolute;
+	top: 3px;
+	right: 1px;
+	width: image-width('icones/chevron-open-checked.png');
+	height: image-height('icones/chevron-open-checked.png');
+	z-index:3;
+}
+
+@mixin collapse-search() {
+	.collapse-search {
+		.columns {
+			margin-bottom: 0;
+			padding-left: 0;
+		}
+		label, .collapsed-search { position: relative; }
+		input[type="checkbox"] {
+			position: absolute;
+			top: 0.5em;
+			left: 0.2em;
+		}
+		.collapsed-search ul, .unfolded-search ul {
+			padding: 0.3em 0 0.3em 1.4em;
+		}
+		// Liste de niveau 2 ferme
+		.collapsed-search {
+			ul { display: none; }
+		}
+	}
+
+	// Icones plus et moins (big sreen)
+	//.big-screen .icon-collapsed-search {
+	//	@extend .icones-plus-dark-light;
+	//}
+	//.big-screen .icon-collapsed-search:hover {
+	//	@extend .icones-plus-dark;
+	//}
+	//.big-screen .icon-collapsed-search-checked { // un enfant selectionne et parent ferme
+	//	@extend .icones-plus-checked;
+	//}
+	//.big-screen .icon-unfolded-search {
+	//	@extend .icones-moins-dark-light;
+	//}
+	//.big-screen .icon-unfolded-search:hover {
+	//	@extend .icones-moins-dark;
+	//}
+	//.big-screen .icon-unfolded-search-checked { // un enfant selectionne et parent ouvert
+	//	@extend .icones-moins-checked;
+	//}
+
+	@include respondTo(moresmallscreen){
+		.collapse-search {
+			.columns > li {
+				position: relative;
+				margin-bottom: 0.3em;
+				padding-left: 2.1em;
+			}
+			.collapsed-search ul {
+				background: transparent url("../../img/bg/pointilles.png") repeat-y 5px 0;
+			}
+			label.hover {
+				padding-left: 1.3em;
+			}
+			// Niveau 2 par defaut
+			.icon-container-collapse {
+				@include icon-before;
+				margin-top: -8px;
+				width: image-width('icones/plus-dark-light.png');
+				height: image-height('icones/plus-dark-light.png');
+			}
+			// Niveau 2 si au moins un enfant est coche mais pas tous
+			.icon-collapsed-search-checked,
+			.icon-unfolded-search-checked {
+				@include icon-before;
+				margin-top: -14px;
+				width: image-width('icones/plus-checked.png');
+				height: image-height('icones/plus-checked.png');
+			}
+		}
+	}
+
+	//// Icone chevron (small sreen)
+	//.small-screen .icon-collapsed-search,
+	//.small-screen .icon-collapsed-search:hover,
+	//.small-screen .icon-unfolded-search:hover,
+	//.small-screen .icon-unfolded-search {
+	//	@extend .icones-chevron;
+	//}
+	//// Icone chevron parent ouvert et au moins un enfant est coche mais pas tous (small sreen)
+	//.small-screen .icon-unfolded-search-checked {
+	//	@extend .icones-chevron-open-checked;
+	//}
+	//// Icone chevron parent ferme et au moins un enfant est coche mais pas tous (small sreen)
+	//.small-screen .icon-collapsed-search-checked {
+	//	@extend .icones-chevron-close-checked;
+	//}
+
+	@include respondTo(smallscreen){
+		.collapse-search {
+			& > ul > li {
+				border-bottom: 1px solid $item-listview-border-color;
+			}
+			label {
+				padding: 0.7em 1.8em 0.7em 1.4em;
+				font-family: $global-font-family;
+			}
+			input[type="checkbox"] {
+				top: 0.7em;
+				left: 0.2em;
+			}
+			// Liste de niveau 2 ferme
+			.icon-collapsed-search {
+				@include icon-chevron;
+			}
+			// Liste de niveau 2 ouverte
+			.icon-unfolded-search {
+				@include icon-chevron;
+				@include rotate(180deg);
+			}
+			// Liste de niveau 2 ferme
+			.icon-collapsed-search-checked { // un enfant selectionne
+				@include icon-chevron-checked;
+			}
+			// Liste de niveau 2 ouverte
+			.icon-unfolded-search-checked { // un enfant selectionne
+				@include icon-chevron-checked;
+			}
+		}
+	}
+}
