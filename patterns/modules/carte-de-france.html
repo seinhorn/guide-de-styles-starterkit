@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="iso-8859-15">
+	<title>Carte des r&eacute;gions de France</title>
+	<link rel="stylesheet" href="../../css/tests/app.css">
+	<link rel="stylesheet" href="../../css/tests/css/carte-de-france.css">
+	<link rel="stylesheet" href="../../css/tests/css/collapse.css">
+	<script type="text/javascript" src="../../js/vendor/require/2.1.8/require.js"></script>
+	<script>
+		/**
+		 * Configuration des dependances qui ne sont pas des modules AMD.
+		 */
+		requirejs.config({
+			baseUrl: '../../js'
+			,paths: {
+				'jquery': 'vendor/jquery/1.8.3/jquery'
+				,'CollapseSearch': 'collapsed'
+				,'raphael': 'vendor/raphael/raphael'
+				,'french_map': 'carte-de-france'
+
+			},
+			shim: {
+				'jquery': { exports: '$' }
+//,'french_map': { deps: ['jquery','raphael'] }
+
+			}
+		});
+		require( ['jquery','CollapseSearch','french_map'], function($) {
+// Ouverture, fermeture des fonctions et des localisations
+			$('.collapsed-search').collapseSearch();
+//initMap();
+		});
+	</script>
+</head>
+
+<body>
+
+<div class="page-carte">
+	<form id=""
+	      name=""
+	      action=""
+	      method="get">
+		<fieldset id="loctn" class="block-form">
+			<!--<h3>Localisation</h3>-->
+			<div class="row">
+
+				<div class="six columns map-container">
+					<div id="js-map"></div><!-- Carte -->
+				</div>
+
+				<div class="six columns">
+					<div class="collapse-search row">
+						<ul class="six columns">
+							<li class="collapsed-search"><label class="hover"><input type="checkbox" name="chk_reg" value="1" id="chk_reg" class="AjaxOnChange" />Alsace</label></li>
+							<li class="collapsed-search"><label class="hover"><input type="checkbox" name="chk_reg" value="2" id="chk_reg" class="AjaxOnChange" />Aquitaine</label></li>
+							<li class="collapsed-search"><label class="hover"><input type="checkbox" name="chk_reg" value="3" id="chk_reg" class="AjaxOnChange" />Auvergne</label></li>
+							<li class="collapsed-search"><label class="hover"><input type="checkbox" name="chk_reg" value="4" id="chk_reg" class="AjaxOnChange" />Basse-Normandie</label></li>
+							<li class="collapsed-search"><label class="hover"><input type="checkbox" name="chk_reg" value="5" id="chk_reg" class="AjaxOnChange" />Bourgogne</label></li>
+							<li class="collapsed-search"><label class="hover"><input type="checkbox" name="chk_reg" value="6" id="chk_reg" class="AjaxOnChange" />Bretagne</label></li>
+							<li class="collapsed-search"><label class="hover"><input type="checkbox" name="chk_reg" value="7" id="chk_reg" class="AjaxOnChange" />Centre</label></li>
+							<li class="collapsed-search"><label class="hover"><input type="checkbox" name="chk_reg" value="8" id="chk_reg" class="AjaxOnChange" />Champagne-Ardenne</label></li>
+							<li class="collapsed-search"><label class="hover"><input type="checkbox" name="chk_reg" value="9" id="chk_reg" class="AjaxOnChange" />Corse</label></li>
+							<li class="collapsed-search"><label class="hover"><input type="checkbox" name="chk_reg" value="10" id="chk_reg" class="AjaxOnChange" />Franche-Comt&eacute;</label></li>
+							<li class="collapsed-search"><label class="hover"><input type="checkbox" name="chk_reg" value="11" id="chk_reg" class="AjaxOnChange" />Haute-Normandie</label></li>
+						</ul>
+						<ul class="six columns">
+							<li class="collapsed-search">
+								<label class="hover">
+									<input type="checkbox" name="chk_reg" value="12" id="chk_reg12" class="AjaxOnChange deroulant" />
+									Ile-de-France
+								</label>
+								<ul>
+									<li>
+										<label class="hover">
+											<input type="checkbox" name="chk_dep" value="75" id="chk_dep" class="AjaxOnChange" />
+											75 - Paris
+										</label>
+									</li>
+									<li>
+										<label class="hover">
+											<input type="checkbox" name="chk_dep" value="77" id="chk_dep" class="AjaxOnChange" />
+											77 - Seine et Marne
+										</label>
+									</li>
+									<li>
+										<label class="hover">
+											<input type="checkbox" name="chk_dep" value="78" id="chk_dep" class="AjaxOnChange" />
+											78 - Yvelines
+										</label>
+									</li>
+									<li>
+										<label class="hover">
+											<input type="checkbox" name="chk_dep" value="91" id="chk_dep" class="AjaxOnChange" />
+											91 - Essonne
+										</label>
+									</li>
+									<li>
+										<label class="hover">
+											<input type="checkbox" name="chk_dep" value="92" id="chk_dep" class="AjaxOnChange" />
+											92 - Hauts de Seine
+										</label>
+									</li>
+									<li>
+										<label class="hover">
+											<input type="checkbox" name="chk_dep" value="93" id="chk_dep" class="AjaxOnChange" />
+											93 - Seine-Saint-Denis
+										</label>
+									</li>
+									<li>
+										<label class="hover">
+											<input type="checkbox" name="chk_dep" value="94" id="chk_dep" class="AjaxOnChange" />
+											94 - Val-de-Marne
+										</label>
+									</li>
+									<li>
+										<label class="hover">
+											<input type="checkbox" name="chk_dep" value="95" id="chk_dep" class="AjaxOnChange" />
+											95 - Val d'Oise
+										</label>
+									</li>
+								</ul>
+							</li>
+							<li class="collapsed-search">
+								<label class="hover">
+									<input type="checkbox" name="chk_reg" value="13" id="chk_reg" class="AjaxOnChange" />
+									Languedoc-Roussillon
+								</label>
+							</li>
+							<li class="collapsed-search">
+								<label class="hover">
+									<input type="checkbox" name="chk_reg" value="14" id="chk_reg" class="AjaxOnChange" />
+									Limousin
+								</label>
+							</li>
+							<li class="collapsed-search">
+								<label class="hover">
+									<input type="checkbox" name="chk_reg" value="15" id="chk_reg" class="AjaxOnChange" />
+									Lorraine
+								</label>
+							</li>
+							<li class="collapsed-search">
+								<label class="hover">
+									<input type="checkbox" name="chk_reg" value="16" id="chk_reg" class="AjaxOnChange" />
+									Midi-Pyr&eacute;n&eacute;es
+								</label>
+							</li>
+							<li class="collapsed-search">
+								<label class="hover">
+									<input type="checkbox" name="chk_reg" value="17" id="chk_reg" class="AjaxOnChange" />
+									Nord-Pas-de-Calais
+								</label>
+							</li>
+							<li class="collapsed-search">
+								<label class="hover">
+									<input type="checkbox" name="chk_reg" value="21" id="chk_reg" class="AjaxOnChange" />
+									P.A.C.A
+								</label>
+							</li>
+							<li class="collapsed-search">
+								<label class="hover">
+									<input type="checkbox" name="chk_reg" value="18" id="chk_reg" class="AjaxOnChange" />
+									Pays-de-la-Loire
+								</label>
+							</li>
+							<li class="collapsed-search">
+								<label class="hover">
+									<input type="checkbox" name="chk_reg" value="19" id="chk_reg" class="AjaxOnChange" />
+									Picardie
+								</label>
+							</li>
+							<li class="collapsed-search">
+								<label class="hover">
+									<input type="checkbox" name="chk_reg" value="20" id="chk_reg" class="AjaxOnChange" />
+									Poitou-Charentes
+								</label>
+							</li>
+							<li class="collapsed-search">
+								<label class="hover">
+									<input type="checkbox" name="chk_reg" value="22" id="chk_reg" class="AjaxOnChange" />
+									Rh&ocirc;ne-Alpes
+								</label>
+							</li>
+							<li class="collapsed-search">
+								<label class="hover">
+									<input type="checkbox" name="chk_reg" value="23" id="chk_reg" class="AjaxOnChange" />
+									Dom-Tom/Etranger
+								</label>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+		</fieldset>
+	</form>
+</div>
+</body>
+</html>

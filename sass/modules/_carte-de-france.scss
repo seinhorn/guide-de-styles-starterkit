@@ -1,0 +1,25 @@
+@charset "iso-8859-15";
+
+// Carte de France Raphael
+@mixin map-search() {
+	#js-map {
+		position: absolute; // POUR IE
+		width: 99%;
+		height: 99%;
+		//border: 1px solid black;
+	}
+	@include respondTo(smallscreen){
+		.map-container,
+		#js-map {
+			display:none;
+		}
+	}
+	// Couleur de fond du label au survol de la carte
+	label.labelhover {
+		background-color: #d8e6ed;
+	}
+	// PROBLEME IE7 pour les colonnes du collapse de la carte
+	.ie7 #loctn .collapse-search .six {
+		width: 49%;
+	}
+}

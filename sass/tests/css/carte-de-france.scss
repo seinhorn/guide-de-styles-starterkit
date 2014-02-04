@@ -1,0 +1,24 @@
+@charset "ISO-8859-15";
+
+@import "../../settings";
+@import "../../modules/reset";
+@import "../../modules/respond";
+@import "../../modules/images/bg";
+@import "../../modules/icons";
+@import "../../modules/fonts";
+@import "../../modules/forms/forms";
+@import "../../modules/grid";
+@import "../../modules/typography";
+@import "../../modules/collapse";
+@import "../../modules/panel";
+
+@include reset();
+@include init-global-fonts();
+@include init-typo();
+@include init-grid();
+@include collapse-search();
+
+@import "../../modules/utils";
+
+@import "../../modules/carte-de-france";
+@include map-search();
